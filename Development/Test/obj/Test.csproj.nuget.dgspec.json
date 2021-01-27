@@ -38,9 +38,12 @@
       },
       "frameworks": {
 <<<<<<< Updated upstream:Development/Test/obj/Test.csproj.nuget.dgspec.json
+<<<<<<< Updated upstream:Development/Test/obj/Test.csproj.nuget.dgspec.json
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
 =======
+=======
+>>>>>>> Stashed changes:Development/Test/Test/obj/Test.csproj.nuget.dgspec.json
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {

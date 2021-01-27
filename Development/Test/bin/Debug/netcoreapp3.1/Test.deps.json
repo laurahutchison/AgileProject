@@ -29,6 +29,9 @@
           "MySql.Data": "8.0.23",
           "MySqlConnector": "1.2.1",
           "Newtonsoft.Json": "12.0.3",
+<<<<<<< Updated upstream:Development/Test/bin/Debug/netcoreapp3.1/Test.deps.json
+>>>>>>> Stashed changes:Development/Test/Test/bin/Debug/netcoreapp3.1/Test.deps.json
+=======
 >>>>>>> Stashed changes:Development/Test/Test/bin/Debug/netcoreapp3.1/Test.deps.json
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
@@ -537,6 +540,9 @@
           "System.Drawing.Common": "4.7.0"
         }
       },
+<<<<<<< Updated upstream:Development/Test/bin/Debug/netcoreapp3.1/Test.deps.json
+>>>>>>> Stashed changes:Development/Test/Test/bin/Debug/netcoreapp3.1/Test.deps.json
+=======
 >>>>>>> Stashed changes:Development/Test/Test/bin/Debug/netcoreapp3.1/Test.deps.json
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
         "compile": {
@@ -2394,6 +2400,9 @@
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
     },
+<<<<<<< Updated upstream:Development/Test/bin/Debug/netcoreapp3.1/Test.deps.json
+>>>>>>> Stashed changes:Development/Test/Test/bin/Debug/netcoreapp3.1/Test.deps.json
+=======
 >>>>>>> Stashed changes:Development/Test/Test/bin/Debug/netcoreapp3.1/Test.deps.json
     "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
       "type": "referenceassembly",

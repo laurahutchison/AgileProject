@@ -3,7 +3,10 @@
   <PropertyGroup>
     <NameOfLastUsedPublishProfile>FolderProfile2</NameOfLastUsedPublishProfile>
 <<<<<<< Updated upstream:Development/Test/Test.csproj.user
+<<<<<<< Updated upstream:Development/Test/Test.csproj.user
 =======
+=======
+>>>>>>> Stashed changes:Development/Test/Test/Test.csproj.user
     <ActiveDebugProfile>Test</ActiveDebugProfile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

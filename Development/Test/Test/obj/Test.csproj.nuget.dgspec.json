@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Laura\\source\\repos\\Test\\Test\\Test.csproj": {}
+    "C:\\Users\\Laura\\Uni\\Agile\\AgileProject\\AgileProject\\Development\\Test\\Test\\Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Laura\\source\\repos\\Test\\Test\\Test.csproj": {
+    "C:\\Users\\Laura\\Uni\\Agile\\AgileProject\\AgileProject\\Development\\Test\\Test\\Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Laura\\source\\repos\\Test\\Test\\Test.csproj",
+        "projectUniqueName": "C:\\Users\\Laura\\Uni\\Agile\\AgileProject\\AgileProject\\Development\\Test\\Test\\Test.csproj",
         "projectName": "Test",
-        "projectPath": "C:\\Users\\Laura\\source\\repos\\Test\\Test\\Test.csproj",
+        "projectPath": "C:\\Users\\Laura\\Uni\\Agile\\AgileProject\\AgileProject\\Development\\Test\\Test\\Test.csproj",
         "packagesPath": "C:\\Users\\Laura\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Laura\\source\\repos\\Test\\Test\\obj\\",
+        "outputPath": "C:\\Users\\Laura\\Uni\\Agile\\AgileProject\\AgileProject\\Development\\Test\\Test\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Laura\\AppData\\Roaming\\NuGet\\NuGet.Config",

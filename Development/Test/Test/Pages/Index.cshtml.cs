@@ -25,9 +25,7 @@ namespace Test.Pages
 
         public void OnGet()
         {
-            MySql.Data.MySqlClient.MySqlConnection mySqlConnection = new
-
-            MySql.Data.MySqlClient.MySqlConnection();
+            MySql.Data.MySqlClient.MySqlConnection mySqlConnection = new MySql.Data.MySqlClient.MySqlConnection();
 
             mySqlConnection.ConnectionString = connectionString;
             try

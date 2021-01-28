@@ -5,9 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using questionnaire_creator.Models;
+using Test.Models;
 
-namespace questionnaire_creator.Controllers
+namespace Test.Controllers
 {
     public class HomeController : Controller
     {

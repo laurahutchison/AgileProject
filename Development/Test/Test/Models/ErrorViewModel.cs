@@ -1,6 +1,6 @@
 using System;
 
-namespace questionnaire_creator.Models
+namespace Test.Models
 {
     public class ErrorViewModel
     {

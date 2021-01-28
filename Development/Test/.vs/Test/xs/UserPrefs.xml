@@ -1,23 +1,27 @@
 ﻿<Properties StartupConfiguration="{6F13D53A-272D-4B92-A98D-F3FB09C86493}|Default">
   <MonoDevelop.Ide.ItemProperties.Test PreferredExecutionTarget="/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Test/Pages/Privacy.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Test/Models/Questionnaire.cs">
     <Files>
       <File FileName="Test/Pages/Privacy.cshtml.cs" Line="1" Column="1" />
       <File FileName="Test/Pages/Privacy.cshtml" Line="11" Column="11" />
-      <File FileName="Test/Pages/FormBuilder.cshtml" Line="1" Column="1" />
+      <File FileName="Test/Pages/FormBuilder.cshtml" />
+      <File FileName="Test/Models/Question.cs" Line="1" Column="1" />
+      <File FileName="Test/Models/Section.cs" Line="1" Column="1" />
+      <File FileName="Test/Models/Questionnaire.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Test" expanded="True">
             <Node name="Test" expanded="True">
+              <Node name="Models" expanded="True">
+                <Node name="Questionnaire.cs" selected="True" />
+              </Node>
               <Node name="Pages" expanded="True">
-                <Node name="Privacy.cshtml" expanded="True" selected="True" />
+                <Node name="Privacy.cshtml" expanded="True" />
               </Node>
             </Node>
           </Node>
-          <Node />
-          <Node />
         </State>
       </Pad>
     </Pads>

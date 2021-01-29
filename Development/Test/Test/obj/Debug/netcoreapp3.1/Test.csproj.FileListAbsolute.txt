@@ -108,3 +108,5 @@ C:\Users\Laura\Uni\Agile\AgileProject\AgileProject\Development\Test\Test\obj\Deb
 C:\Users\Laura\Uni\Agile\AgileProject\AgileProject\Development\Test\Test\obj\Debug\netcoreapp3.1\Test.dll
 C:\Users\Laura\Uni\Agile\AgileProject\AgileProject\Development\Test\Test\obj\Debug\netcoreapp3.1\Test.pdb
 C:\Users\Laura\Uni\Agile\AgileProject\AgileProject\Development\Test\Test\obj\Debug\netcoreapp3.1\Test.genruntimeconfig.cache
+C:\Users\Laura\Uni\Agile\AgileProject\AgileProject\Development\Test\Test\obj\Debug\netcoreapp3.1\Razor\Pages\UploadHTML.cshtml.g.cs
+C:\Users\Laura\Uni\Agile\AgileProject\AgileProject\Development\Test\Test\obj\Debug\netcoreapp3.1\Razor\Pages\BLOB.cshtml.g.cs

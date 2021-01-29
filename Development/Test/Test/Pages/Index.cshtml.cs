@@ -43,6 +43,7 @@ namespace Test.Pages
 
                             // Connection has been made
                             Console.Write("1");
+                           
                             break;
 
                         case System.Data.ConnectionState.Closed:
@@ -78,7 +79,9 @@ namespace Test.Pages
                 // Use the exception object to handle all other non-MySql specific errors
 
             }
+             mySqlConnection.Close();
         }
+
     }
 }
 

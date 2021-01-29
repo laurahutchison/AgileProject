@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,20 +8,33 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using MySql.Data.MySqlClient;
+using Microsoft.Extensions.Logging;
+using Test.Services;
 
 //Code partioned from godaddy.com
 
 namespace Test.Pages
 {
-    public class QuestionnaireModel : PageModel
+    public class FormBuilderModel : PageModel
     {
+        private readonly ILogger<FormBuilderModel> _logger;
+        public QuestionnaireService questionnaireService;
+
+        public FormBuilderModel(QuestionnaireService _questionnaireService)
+        {
+            //_logger = logger;
+            questionnaireService = _questionnaireService;
+        }
+
         string connectionString = "Server=silva.computing.dundee.ac.uk;Database=20agileteam9db;Uid=20agileteam9;Pwd=3489.at9.9843;";
 
         [BindProperty]
         public Questionnaire questionnaire { get; set; } = new Questionnaire();
 
-        public void OnPostDetails(string author, string title)
+        public void OnPostDetails()
         {
+            //using var outputStream = File.OpenWrite("~/data/test.json");
+            questionnaireService.addQuestionnaire(questionnaire);
         }
 
         public void OnPost()

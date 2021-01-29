@@ -41,44 +41,12 @@ namespace Test.Pages
 
                             // Connection has been made
                             //THIS WORKS THIS WORKS THIS WORKS THIS WORKS READ BY NESTED FOR LOOP THANK YOU STACKOVERFLOW
-                            DataTable temp = new DataTable();
-                            MySqlDataAdapter adapter = new MySqlDataAdapter(@"SELECT * FROM 20agileteam9db.questionanswerexample", mySqlConnection);
-                            adapter.Fill(temp);
-
-                            foreach (DataColumn column in temp.Columns)
-                            {
-                                foreach (DataRow row in temp.Rows)
-                                {
-                                    Console.WriteLine(row[column]);
-                                }
-                            }
-
-
-                            // Connection has been made
-                            DataSet f = new DataSet();
-//                            MySqlDataAdapter adapter = new MySqlDataAdapter(@"SELECT * FROM 20agileteam9db.questionanswerexample", mySqlConnection);
-                            adapter.Fill(f);
-
-
-                            List<string> list = new List<string>();
-
-
-
-                            for (int i = 0; i < f.Tables.Count; i++)
-                            {
-                                list.Add(f.Tables[i].ToString());
-                            }
-
-                            Console.Write("hsjskd");
-
-                            String[] str = list.ToArray();
-
                             //THE PRIMARY KEY questionAnswerID MUST BE UNIQUE, same with any other unique key or it will return an error - exception handling must be used
-                            //string fff = @"INSERT INTO Customers (questionAnswerID, questionID, answer1, answer2) VALUES('2347', '45678', 'no', 'no');";
-                            //MySqlCommand sqlCmd = new MySqlCommand(@"INSERT INTO `20agileteam9db`.`questionanswerexample` (questionAnswerID, questionID, answer1, answer2) VALUES('4567', '45678', 'no', 'no');", mySqlConnection);
-                            //sqlCmd.Connection = mySqlConnection;
+                            string fff = @"INSERT INTO Customers (questionAnswerID, questionID, answer1, answer2) VALUES('2347', '45678', 'no', 'no');";
+                            MySqlCommand sqlCmd = new MySqlCommand(@"INSERT INTO `20agileteam9db`.`questionanswerexample` (questionAnswerID, questionID, answer1, answer2) VALUES(NULL, '45678', 'no', 'no');", mySqlConnection);
+                            sqlCmd.Connection = mySqlConnection;
                             //sqlCmd.Connection.Open();
-                            //sqlCmd.ExecuteNonQuery();
+                            sqlCmd.ExecuteNonQuery();
                             //mySqlConnection.Close();
                             Console.Write("hsjskd");
 

@@ -21,7 +21,7 @@ namespace Test.Pages
 
         public void OnPush()
         {
-            JSONObject jsonObject = new JSONObject(;
+            JSONObject jsonObject = new JSONObject("test");
 
         }
 

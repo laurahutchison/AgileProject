@@ -50,6 +50,27 @@ namespace Test.Pages
                             //mySqlConnection.Close();
                             Console.Write("hsjskd");
 
+
+
+                            //Tim code
+                            int surveyID = 21523;
+                            string surveyResultTable = @"CREATE TABLE IF NOT EXISTS 20agileteam9db.survey_" + surveyID.ToString() + @" (
+                                reponseID INT(11) NOT NULL AUTO_INCREMENT,
+                                questionID INT(11) NOT NULL,
+                                responseDate DATE NULL,
+                                answersText MEDIUMTEXT NULL DEFAULT NULL,
+                                PRIMARY KEY(reponseID),
+                                UNIQUE INDEX answerID_UNIQUE(reponseID ASC),
+                                INDEX questionID_idx(questionID ASC),
+                                CONSTRAINT questionID
+                                FOREIGN KEY(questionID)
+                                REFERENCES 20agileteam9db.questionnaires(questionID)
+                                ON DELETE NO ACTION
+                                ON UPDATE NO ACTION)
+                                ENGINE = InnoDB
+                                DEFAULT CHARACTER SET = utf8; ";
+                            MySqlCommand addTable = new MySqlCommand(surveyResultTable,mySqlConnection);
+                            addTable.ExecuteNonQuery();
                             Console.Write("1");
                             break;
 

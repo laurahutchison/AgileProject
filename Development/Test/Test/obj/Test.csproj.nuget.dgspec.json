@@ -1,21 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Laura\\Uni\\Agile\\AgileProject\\AgileProject\\Development\\Test\\Test\\Test.csproj": {}
+    "U:\\Documents\\GitHub\\AgileProject\\Development\\Test\\Test\\Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Laura\\Uni\\Agile\\AgileProject\\AgileProject\\Development\\Test\\Test\\Test.csproj": {
+    "U:\\Documents\\GitHub\\AgileProject\\Development\\Test\\Test\\Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Laura\\Uni\\Agile\\AgileProject\\AgileProject\\Development\\Test\\Test\\Test.csproj",
+        "projectUniqueName": "U:\\Documents\\GitHub\\AgileProject\\Development\\Test\\Test\\Test.csproj",
         "projectName": "Test",
-        "projectPath": "C:\\Users\\Laura\\Uni\\Agile\\AgileProject\\AgileProject\\Development\\Test\\Test\\Test.csproj",
-        "packagesPath": "C:\\Users\\Laura\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Laura\\Uni\\Agile\\AgileProject\\AgileProject\\Development\\Test\\Test\\obj\\",
+        "projectPath": "U:\\Documents\\GitHub\\AgileProject\\Development\\Test\\Test\\Test.csproj",
+        "packagesPath": "C:\\Users\\timothylundberg\\.nuget\\packages\\",
+        "outputPath": "U:\\Documents\\GitHub\\AgileProject\\Development\\Test\\Test\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Laura\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\timothylundberg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -26,7 +31,6 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -38,7 +42,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "MySql.Data": {
               "target": "Package",
@@ -71,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.405\\RuntimeIdentifierGraph.json"
         }
       }
     }

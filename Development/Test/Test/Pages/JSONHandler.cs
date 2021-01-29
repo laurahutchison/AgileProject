@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Data;
@@ -6,23 +6,35 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using MySql.Data.MySqlClient;
-//Code partioned from godaddy.com
+
+//to save custom questionnaires
 
 namespace Test.Pages
 {
-    public class UploadHTMLModel : PageModel
+    public class JSONHandler
     {
         string connectionString = "Server=silva.computing.dundee.ac.uk;Database=20agileteam9db;Uid=20agileteam9;Pwd=3489.at9.9843;";
 
-        public void OnGet()
+        String createTable = @"CREATE TABLE `20agileteam9db`.`jsonstore` (
+          `jsonID` INT NOT NULL AUTO_INCREMENT,
+          `jsonText` LONGTEXT NULL,
+          PRIMARY KEY (`jsonID`));
+          ";
+
+        String queryString = "";
+
+        public JSONHandler(string connectionString, string createTable, string queryString)
         {
+            this.connectionString = connectionString;
+            this.createTable = createTable;
+            this.queryString = queryString;
         }
 
-        public void OnPost()
+        public bool JsonSave(JSONObject jsonObject)
         {
-            JSONObject jsonObject;
-
             MySql.Data.MySqlClient.MySqlConnection mySqlConnection = new MySql.Data.MySqlClient.MySqlConnection();
+
+
 
             mySqlConnection.ConnectionString = connectionString;
             try
@@ -39,29 +51,13 @@ namespace Test.Pages
                         case System.Data.ConnectionState.Open:
 
                             // Connection has been made
-                            DataTable dataTable = new DataTable();
-                            MySqlDataAdapter adapter = new MySqlDataAdapter(@"SELECT * FROM 20agileteam9db.questionanswerexample", mySqlConnection);
-                            adapter.Fill(dataTable);
-
-                            List<string> list = new List<string>();
-                            
-                            
-
-                            for (int i = 0; i < dataTable.Rows.Count; i++)
-                                {
-                                list.Add(dataTable.Rows[i].ToString());
-                                }
-
-                            String[] str = list.ToArray();
-                            
-
-                            //string fff = @"INSERT INTO Customers (questionAnswerID, questionID, answer1, answer2) VALUES('234567', '45678', 'no', 'no');";
-                            //MySqlCommand sqlCmd = new MySqlCommand(@"INSERT INTO `20agileteam9db`.`questionanswerexample` (questionAnswerID, questionID, answer1, answer2) VALUES('234567', '45678', 'no', 'no');");
-                            //sqlCmd.Connection = mySqlConnection;
-                            //sqlCmd.ExecuteNonQuery();
-                            Console.Write("hsjskd");
-
+                            MySqlCommand sqlCmd = new MySqlCommand(queryString);
+                            sqlCmd.Parameters.AddWithValue("@jsonString", jsonObject.jsonString);
+                            sqlCmd.Connection = mySqlConnection;
+                            sqlCmd.ExecuteNonQuery();
                             Console.Write("1");
+
+                            return true;
                             break;
 
                         case System.Data.ConnectionState.Closed:
@@ -87,7 +83,7 @@ namespace Test.Pages
             {
 
                 // Use the mySqlException object to handle specific MySql errors
-
+                return false;
             }
 
             catch (Exception exception)
@@ -95,8 +91,39 @@ namespace Test.Pages
             {
 
                 // Use the exception object to handle all other non-MySql specific errors
-
+                return false;
             }
+
+            return false;
         }
+
+        public bool jsonRead()
+        {
+            return false;
+        }
+
+        public void jsonToString()
+        {
+            
+        }
+    }
+
+    public class JSONObject
+    {
+        public int ID { get; set; }
+        public string jsonString { get; set; }
+
+        public JSONObject(string jsonString0)
+        {
+            ID = 0;
+            this.jsonString = jsonString;
+        }
+
+        public void idSet(int set)
+        {
+            this.ID = set;
+        }
+
+
     }
 }

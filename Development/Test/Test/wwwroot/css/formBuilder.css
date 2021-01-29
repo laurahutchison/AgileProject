@@ -1,5 +1,6 @@
 ﻿#builder1 {
-    display: none;
+    display: block;
+/*    display: none;*/
 }
 
 #builder2 {
@@ -8,4 +9,8 @@
 
 #start {
     margin-top: 21px;
+}
+
+#builder3 {
+    display: none;
 }

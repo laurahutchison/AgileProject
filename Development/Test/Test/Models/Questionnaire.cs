@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections;
 using System.Text.Json;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Test.Models
 {
     public class Questionnaire
     {
-        public string id { get; set; }
+        public string id { get; set; } = "";
         public string author { get; set; }
         public string title { get; set; }
 
-        public int sectionCount { get; set; }
+        public int sectionCount { get; set; } = 0;
 
         public SortedList sections { get; set; } = new SortedList();
 
@@ -18,7 +19,7 @@ namespace Test.Models
         {
         }
 
-        public void addSection(string name)
+        public void AddSection(string name)
         {
             sectionCount = sections.Count;
             sectionCount++;

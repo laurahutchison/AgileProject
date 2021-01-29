@@ -1,24 +1,34 @@
 ﻿<Properties StartupConfiguration="{6F13D53A-272D-4B92-A98D-F3FB09C86493}|Default">
-  <MonoDevelop.Ide.ItemProperties.Test PreferredExecutionTarget="/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Test/Models/Questionnaire.cs">
+  <MonoDevelop.Ide.ItemProperties.Test PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Test/wwwroot/css/site.css">
     <Files>
       <File FileName="Test/Pages/Privacy.cshtml.cs" Line="1" Column="1" />
-      <File FileName="Test/Pages/Privacy.cshtml" Line="11" Column="11" />
+      <File FileName="Test/Pages/Privacy.cshtml" />
       <File FileName="Test/Pages/FormBuilder.cshtml" />
-      <File FileName="Test/Models/Question.cs" Line="1" Column="1" />
-      <File FileName="Test/Models/Section.cs" Line="1" Column="1" />
-      <File FileName="Test/Models/Questionnaire.cs" Line="1" Column="1" />
+      <File FileName="Test/Models/Question.cs" />
+      <File FileName="Test/Models/Section.cs" />
+      <File FileName="Test/Models/Questionnaire.cs" />
+      <File FileName="Test/Pages/FormBuilder.cshtml.cs" />
+      <File FileName="Test/wwwroot/js/formBuilder.js" />
+      <File FileName="Test/wwwroot/css/formBuilder.css" />
+      <File FileName="Test/wwwroot/css/site.css" Line="143" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Test" expanded="True">
             <Node name="Test" expanded="True">
-              <Node name="Models" expanded="True">
-                <Node name="Questionnaire.cs" selected="True" />
-              </Node>
+              <Node name="Models" expanded="True" />
               <Node name="Pages" expanded="True">
+                <Node name="Shared" expanded="True" />
+                <Node name="FormBuilder.cshtml" expanded="True" />
                 <Node name="Privacy.cshtml" expanded="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True">
+                <Node name="css" expanded="True">
+                  <Node name="formBuilder.css" selected="True" />
+                </Node>
+                <Node name="js" expanded="True" />
               </Node>
             </Node>
           </Node>

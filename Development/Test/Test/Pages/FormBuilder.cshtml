@@ -4,29 +4,31 @@
     ViewData["Title"] = "New Questionnaire";
 }
 
-@*<section id="builder0">
-        <div class="container">
-            <div class="underlay">
-                <h1 class="display-4">Make a New Questionnaire</h1>
-                <p>On this page, you can make new questionnaires from scratch.</p>
-            </div>
-            <button id="start" onclick="section1()">Let's get started!</button>
+<section id="builder0">
+    <div class="container">
+        <div class="underlay">
+            <h1 class="display-4">Make a New Questionnaire</h1>
+            <p>On this page, you can make new questionnaires from scratch.</p>
         </div>
-    </section>*@
+        <button id="start" onclick="section1()">Let's get started!</button>
+    </div>
+</section>
 <section id="builder1">
     <div class="container">
-        <h1>Questionnaire Details</h1>
         <!-- some stuff from here on out taken from https://www.w3schools.com/howto/default.asp -->
         <!-- to get the author and questionnaire's name-->
         <form asp-page-handler="details" method="post">
             @*<form method="post">*@
-            <div id="authorGroup" class="formGroup">
-                <label asp-for="questionnaire.author">Author:</label>
-                <input asp-for="questionnaire.author" name="questionnaire.author" type="text" id="qAuthor">
-            </div>
-            <div id="titleGroup" class="formGroup">
-                <label asp-for="questionnaire.title">Questionnaire Title:</label>
-                <input asp-for="questionnaire.title" name="questionnaire.title" type="text" id="qTitle">
+            <div class="underlay">
+                <h1>Questionnaire Details</h1>
+                <div id="authorGroup" class="formGroup">
+                    <label asp-for="questionnaire.author">Author:</label>
+                    <input asp-for="questionnaire.author" name="questionnaire.author" type="text" id="qAuthor">
+                </div>
+                <div id="titleGroup" class="formGroup">
+                    <label asp-for="questionnaire.title">Questionnaire Title:</label>
+                    <input asp-for="questionnaire.title" name="questionnaire.title" type="text" id="qTitle">
+                </div>
             </div>
             <button id="create">Create Questionnaire</button>
         </form>

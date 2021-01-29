@@ -1,5 +1,5 @@
 ﻿#builder1 {
-    display: block;
+    display: none;
 /*    display: none;*/
 }
 
@@ -7,7 +7,7 @@
     display: none;
 }
 
-#start {
+#start, #create {
     margin-top: 21px;
 }
 

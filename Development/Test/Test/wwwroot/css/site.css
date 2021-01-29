@@ -107,9 +107,9 @@ p {
     color: #464646;
 }
 
-form {
-    margin: 13px 0;
-}
+/*form {
+    margin: 13px 0 21px;
+}*/
 
 label {
     display: block;

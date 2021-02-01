@@ -2,11 +2,16 @@
 using System.Collections;
 using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+
 
 namespace Test.Models
 {
+    [Table("questionnaire")]
     public class Questionnaire
     {
+        [Key]
         public string id { get; set; } = "";
         public string author { get; set; } = "";
         public string title { get; set; } = "";

@@ -1,0 +1,32 @@
+﻿@page
+@model Test.Pages.TestModel
+@{
+    ViewData["Title"] = "Testing Load Data";
+}
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+    </head>
+
+    <body>
+        <h3>Test Table</h3>
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>Ques ID</th>
+                <th>1</th>
+                <th>2</th>
+            </tr>
+            @foreach(var questionanswerexample in Model.TestTables)
+            {
+        <tr>
+            <td>@questionanswerexample.questionAnswerID</td>
+            <td>@questionanswerexample.questionID</td>
+            <td>@questionanswerexample.answer1</td>
+            <td>@questionanswerexample.answer2</td>
+        </tr>
+            }
+        </table>
+    </body>
+</html>

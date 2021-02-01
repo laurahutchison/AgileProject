@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Text.Json;
 
 namespace Test.Models
@@ -12,7 +13,7 @@ namespace Test.Models
 
         public int questionCount { get; set; }
 
-        public SortedList questions { get; set; } = new SortedList();
+        public List<Question> questions { get; set; } = new List<Question>();
         
         public Section()
         {
@@ -22,7 +23,7 @@ namespace Test.Models
         {
             questionCount = questions.Count;
             questionCount++;
-            questions.Add((questionCount), new Section());
+            questions.Add(new Question());
         }
 
         public override string ToString() => JsonSerializer.Serialize<Section>(this);

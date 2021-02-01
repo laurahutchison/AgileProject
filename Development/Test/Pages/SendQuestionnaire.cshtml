@@ -16,14 +16,16 @@
     <div class="text-center">
         <h2 class="display-4">Send a Questionnaire</h2>
         <div class="col-sm-10">
-            <input type="checkbox" name="QuestionnaireId" value="1"> Questionnaire 1<br />
-            <input type="checkbox" name="QuestionnaireId" value="2"> Questionnaire 2<br />
-            <input type="checkbox" name="QuestionnaireId" value="3"> Questionnaire 3<br />
-            <input type="checkbox" name="QuestionnaireId" value="4"> Questionnaire 4<br />
+            <div class="checkboxes">
+                <label><input type="checkbox" name="QuestionnaireId" value="1" />Questionnaire 1</label>
+                <input type="checkbox" name="QuestionnaireId" value="2"> Questionnaire 2<br />
+                <input type="checkbox" name="QuestionnaireId" value="3"> Questionnaire 3<br />
+                <input type="checkbox" name="QuestionnaireId" value="4"> Questionnaire 4<br />
+            </div>
         </div>
-        @if(ViewData["questionnaireId"] != null)
+        @if (ViewData["questionnaireId"] != null)
         {
-    <h2> You sent the following questionnaires: @string.Join(",", (int[])ViewData["questionnaireId"]) to @ViewData["email"] </h2>
+            <h2> You sent the following questionnaires: @string.Join(",", (int[])ViewData["questionnaireId"]) to @ViewData["email"] </h2>
         }
 
         <h3>Who to send this to?</h3>

@@ -298,3 +298,5 @@ C:\Users\Laura\Uni\Agile\AgileProject\AgileProject\Development\Test\Test\obj\Deb
 C:\Users\Laura\Uni\Agile\AgileProject\AgileProject\Development\Test\Test\obj\Debug\netcoreapp3.1\Test.Views.pdb
 C:\Users\Laura\Uni\Agile\AgileProject\AgileProject\Development\Test\Test\obj\Debug\netcoreapp3.1\Test.csproj.CopyComplete
 C:\Users\Laura\Uni\Agile\AgileProject\AgileProject\Development\Test\Test\obj\Debug\netcoreapp3.1\Test.genruntimeconfig.cache
+C:\Users\Laura\Uni\Agile\AgileProject\AgileProject\Development\Test\Test\obj\Debug\netcoreapp3.1\Test.csprojAssemblyReference.cache
+C:\Users\Laura\Uni\Agile\AgileProject\AgileProject\Development\Test\Test\obj\Debug\netcoreapp3.1\Razor\Pages\Test2.cshtml.g.cs

@@ -8,14 +8,14 @@ using Test.Models;
 
 namespace Test.Pages
 {
-    public class TestModel : PageModel
+    public class Test2Model : PageModel
     {
         private DatabaseContext db;
-        
+
         [BindProperty]
         public questionanswerexample test { get; set; }
 
-        public TestModel(DatabaseContext _db)
+        public Test2Model(DatabaseContext _db)
         {
             db = _db;
         }
@@ -43,16 +43,16 @@ namespace Test.Pages
             //replace with any other variables needing sorted thru/etc
             bool ifExists = db.TestTables.Any(questionanswerexample => questionanswerexample.questionAnswerID == test.questionAnswerID);
 
-            if(ifExists){
-                //update data
-                db.Entry(test).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            if (ifExists)
+            {
+                //remove entry
+                db.Remove(db.TestTables.Find(test.questionAnswerID));
                 db.SaveChanges();
             }
-            else if(!ifExists){
-                //if (db.TestTables.Contains<questionanswerexample>(test.questionAnswerID))
-                //Add to database - add to the dbSet in Database Context, then save changes
-                db.TestTables.Add(test);
-                db.SaveChanges();
+            else if (!ifExists)
+            {
+                //replace with some prompt on the screen - bool that when returns false, a prompt pops up on screen?
+                Console.WriteLine("Not existing!");
 
             }
 

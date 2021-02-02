@@ -95,6 +95,45 @@ section {
     height: 100%;
 }
 
+.flex {
+    margin: 13px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    flex: 1 1 150px; /*  Stretching: */
+    /*flex: 0 1 150px;*/ /*  No stretching: */
+    margin: 5px;
+    padding: 0;
+    background-color: #f4cec3;
+}
+
+.card h2 {
+    position: relative;
+    top: 5px;
+    left: 13px;
+}
+
+.card h3 {
+    position: relative;
+    top: 5px;
+    left: 13px;
+}
+
+.card h5 {
+    position: relative;
+    top: 21px;
+    left: 13px;
+}
+
+.card p {
+    position: relative;
+    top: 5px;
+    left: 13px;
+}
+
 h1 {
     color: #4365e2;
     margin: 0;
@@ -151,6 +190,7 @@ footer {
     bottom: 0;
     width: 100%;
     height: 48px;
+    background-color: #fffaf4;
 }
 
 #footer {

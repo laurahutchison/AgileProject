@@ -7,16 +7,10 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Test.Pages
 {
-    public class FormEditorModel : PageModel
+    public class ProjectModel : PageModel
     {
-        [BindProperty(SupportsGet = true)]
-        public String title { get; set; }
-        public String primeAuthor { get; set; }
-        public List<String> coAuthors{ get; set; }
-
         public void OnGet()
         {
-            
         }
     }
 }

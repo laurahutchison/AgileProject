@@ -27,6 +27,7 @@ namespace Test
         {
             services.AddRazorPages();
             services.AddTransient<QuestionnaireService>();
+            services.AddTransient<ProjectService>();
             services.AddLogging();
         }
 

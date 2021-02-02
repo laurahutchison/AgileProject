@@ -176,3 +176,5 @@ C:/Users/Laura/Uni/Agile/AgileProject/AgileProject/Development/Test/Test/obj/Deb
 /Users/parsnips/Documents/Uni/Year 3/Agile/Assignment/Repo/Development/Test/Test/bin/Debug/netcoreapp3.1/MySql.Data.EntityFrameworkCore.dll
 /Users/parsnips/Documents/Uni/Year 3/Agile/Assignment/Repo/Development/Test/Test/bin/Debug/netcoreapp3.1/MySql.Web.dll
 /Users/parsnips/Documents/Uni/Year 3/Agile/Assignment/Repo/Development/Test/Test/obj/Debug/netcoreapp3.1/Razor/Pages/FormBuilder.cshtml.g.cs
+/Users/parsnips/Documents/Uni/Year 3/Agile/Assignment/Repo/Development/Test/Test/obj/Debug/netcoreapp3.1/Razor/Pages/FormEditor.cshtml.g.cs
+/Users/parsnips/Documents/Uni/Year 3/Agile/Assignment/Repo/Development/Test/Test/obj/Debug/netcoreapp3.1/Razor/Pages/Projects.cshtml.g.cs

@@ -20,6 +20,7 @@ body {
     width: 960px;
     height: 100%;
     margin: auto;
+/*    background-color: #FFFFFF;*/
     padding: 0 80px;
 }
 
@@ -65,20 +66,6 @@ nav {
     line-height: 48px;
 }
 
-a, a:visited {
-    text-decoration: none;
-    color: #4365e2;
-    opacity: 0.7;
-    transition: .21s;
-}
-
-    a:hover, a:active {
-        color: #4365e2;
-        text-decoration: none;
-        opacity: 1;
-        transition: .21s;
-    }
-
 /*End of sidebar*/
 
 /*Main*/
@@ -90,7 +77,7 @@ main {
 section {
     width: 960px;
     margin: auto;
-    padding: 21vh 0;
+    padding: 21vh 0 0;
     transition: 0.21s;
     height: 100%;
 }
@@ -99,39 +86,63 @@ section {
     margin: 13px 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
 }
 
-.card {
-    flex: 1 1 150px; /*  Stretching: */
-    /*flex: 0 1 150px;*/ /*  No stretching: */
-    margin: 5px;
+a.card, a.card:visited {
+    display: block;
+    flex: 1 1 210px;
+    margin: 7px;
     padding: 0;
-    background-color: #f4cec3;
+    background-image: linear-gradient(to bottom, #ff6264, #f4cec3), url('~css/background.jpg');
+    background-size: cover;
+    color: #fffaf4;
+/*    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
 }
 
-.card h2 {
-    position: relative;
-    top: 5px;
-    left: 13px;
+    a.card:hover, a.card:focus {
+        display: block;
+        flex: 1 1 210px;
+        margin: 7px;
+        padding: 0;
+        color: #fffaf4;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    a.card:active {
+        transform: translateY(5px);
+    }
+
+article {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-.card h3 {
-    position: relative;
-    top: 5px;
-    left: 13px;
+.card article .title {
+    font-size: 30px;
+    line-height: 30px;
+    max-width: 210px;
+    width: 100%;
+    height: 30px;
+    padding: 0 21px;
+    margin: 21px 0 103px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
-.card h5 {
-    position: relative;
-    top: 21px;
-    left: 13px;
-}
-
-.card p {
-    position: relative;
-    top: 5px;
-    left: 13px;
+.card article .authors {
+    width: 100%;
+    max-width: 210px;
+    color: #fffaf4;
+    height: 36px;
+    padding: 0 21px;
+    margin: 21px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 h1 {
@@ -145,6 +156,20 @@ h1 {
 p {
     color: #464646;
 }
+
+a, a:visited {
+    opacity: 0.7;
+    transition: .21s;
+    text-decoration: none;
+    color: #4365e2;
+}
+
+    a:hover, a:active {
+        opacity: 1;
+        transition: .21s;
+        text-decoration: none;
+        color: #4365e2;
+    }
 
 /*form {
     margin: 13px 0 21px;

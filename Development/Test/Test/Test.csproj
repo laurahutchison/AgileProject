@@ -25,5 +25,7 @@
   <ItemGroup>
     <Folder Include="Services\" />
     <Folder Include="wwwroot\data\" />
+    <Folder Include="Components\" />
+    <Folder Include="wwwroot\images\" />
   </ItemGroup>
 </Project>

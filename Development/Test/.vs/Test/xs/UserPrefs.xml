@@ -1,18 +1,18 @@
 ﻿<Properties StartupConfiguration="{6F13D53A-272D-4B92-A98D-F3FB09C86493}|Default">
-  <MonoDevelop.Ide.ItemProperties.Test PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Test/Models/Project.cs">
+  <MonoDevelop.Ide.ItemProperties.Test PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Test/Services/UserService.cs">
     <Files>
       <File FileName="Test/Pages/Privacy.cshtml.cs" Line="1" Column="1" />
       <File FileName="Test/Pages/Privacy.cshtml" />
-      <File FileName="Test/Pages/FormBuilder.cshtml" />
+      <File FileName="Test/Pages/FormBuilder.cshtml" Line="80" Column="10" />
       <File FileName="Test/Models/Question.cs" />
       <File FileName="Test/Models/Section.cs" />
       <File FileName="Test/Models/Questionnaire.cs" />
       <File FileName="Test/Pages/FormBuilder.cshtml.cs" />
       <File FileName="Test/wwwroot/js/formBuilder.js" />
       <File FileName="Test/wwwroot/css/formBuilder.css" />
-      <File FileName="Test/wwwroot/css/site.css" Line="116" Column="13" />
-      <File FileName="Test/Startup.cs" />
+      <File FileName="Test/wwwroot/css/site.css" Line="98" Column="99" />
+      <File FileName="Test/Startup.cs" Line="31" Column="36" />
       <File FileName="Test/Services/QuestionnaireService.cs" />
       <File FileName="Test/wwwroot/data/temp.json" />
       <File FileName="Test/wwwroot/data/Questionnaires.json" />
@@ -21,31 +21,39 @@
       <File FileName="Test/Models/User.cs" />
       <File FileName="Test/Pages/Shared/_Layout.cshtml" Line="25" Column="84" />
       <File FileName="Test/Pages/Index.cshtml" />
-      <File FileName="Test/Pages/Projects.cshtml" Line="21" Column="15" />
-      <File FileName="Test/Pages/Projects.cshtml.cs" Line="24" Column="54" />
-      <File FileName="Test/Services/ProjectService.cs" Line="27" Column="55" />
-      <File FileName="Test/wwwroot/data/projects.json" Line="44" Column="34" />
-      <File FileName="Test/Pages/Project.cshtml" Line="1" Column="1" />
-      <File FileName="Test/Pages/Project.cshtml.cs" Line="14" Column="10" />
+      <File FileName="Test/Pages/Projects.cshtml" Line="13" Column="14" />
+      <File FileName="Test/Pages/Projects.cshtml.cs" Line="29" Column="2" />
+      <File FileName="Test/Services/ProjectService.cs" Line="40" Column="10" />
+      <File FileName="Test/wwwroot/data/projects.json" Line="26" Column="30" />
+      <File FileName="Test/Pages/Project.cshtml" Line="5" Column="83" />
+      <File FileName="Test/Pages/Project.cshtml.cs" Line="18" Column="20" />
       <File FileName="Test/Models/Project.cs" Line="1" Column="1" />
+      <File FileName="Test/Program.cs" Line="16" Column="1" />
+      <File FileName="Test/Pages/_ViewStart.cshtml" Line="1" Column="1" />
+      <File FileName="Test/Pages/_ViewImports.cshtml" Line="1" Column="1" />
+      <File FileName="Test/Pages/Shared/_ValidationScriptsPartial.cshtml" Line="1" Column="1" />
+      <File FileName="Test/Components/ProjectList.razor" Line="19" Column="1" />
+      <File FileName="Test/Services/UserService.cs" Line="4" Column="9" />
+      <File FileName="Test/wwwroot/data/users.json" Line="13" Column="7" />
+      <File FileName="Test/Services/ImageService.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Test" expanded="True">
             <Node name="Test" expanded="True">
-              <Node name="Models" expanded="True">
-                <Node name="Project.cs" selected="True" />
-              </Node>
+              <Node name="Components" expanded="True" />
+              <Node name="Models" expanded="True" />
               <Node name="Pages" expanded="True">
+                <Node name="Shared" expanded="True" />
                 <Node name="Project.cshtml" expanded="True" />
                 <Node name="Projects.cshtml" expanded="True" />
               </Node>
-              <Node name="Services" expanded="True" />
+              <Node name="Services" expanded="True">
+                <Node name="UserService.cs" selected="True" />
+              </Node>
               <Node name="wwwroot" expanded="True">
                 <Node name="css" expanded="True" />
-                <Node name="data" expanded="True" />
-                <Node name="js" expanded="True" />
               </Node>
             </Node>
           </Node>

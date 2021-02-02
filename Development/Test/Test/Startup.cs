@@ -28,6 +28,8 @@ namespace Test
             services.AddRazorPages();
             services.AddTransient<QuestionnaireService>();
             services.AddTransient<ProjectService>();
+            services.AddTransient<UserService>();
+            services.AddTransient<ImageService>();
             services.AddLogging();
         }
 

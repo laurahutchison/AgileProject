@@ -1,4 +1,16 @@
 ﻿@page
 @model Test.Pages.ProjectModel
 @{
+    string name = Model._userService.GetNameByID(Model.project.authorId);
+    string names = Model._userService.GetNamesFromList(Model.project.coAuthorIds);
 }
+<section>
+    <div class="container">
+        <h1>@Model.project.title</h1>
+        <p>@Model.project.description<p>
+        <p>
+            <strong>Principle Researcher</strong> @name<br />
+            <strong>Co-Researchers</strong> @names
+        </p>
+    </div>
+</section>

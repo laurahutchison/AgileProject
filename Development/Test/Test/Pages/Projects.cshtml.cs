@@ -12,11 +12,15 @@ namespace Test.Pages
     public class ProjectsModel : PageModel
     {
         public ProjectService _projectService;
+        public UserService _userService;
+        public ImageService _imageService;
         public IEnumerable<Project> projects { get; private set; }
 
-        public ProjectsModel(ProjectService projectService)
+        public ProjectsModel(ProjectService projectService, UserService userService, ImageService imageService)
         {
             _projectService = projectService;
+            _userService = userService;
+            _imageService = imageService;
         }
 
         public void OnGet()

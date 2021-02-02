@@ -11,6 +11,7 @@ namespace Test.Models
         public string authorId { get; set; }
         public List<string> coAuthorIds { get; set; }
         public List<string> questionnaireIds { get; set; }
+        public string image { get; set; }
 
         public Project()
         {

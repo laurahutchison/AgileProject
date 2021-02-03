@@ -9,25 +9,26 @@ namespace Test.Models
     public class Questionnaire
     {
         public string id { get; set; }
-        public User author { get; set; }
+        public string authorId { get; set; }
+        public string projectId { get; set; }
+        public List<string> coAuthorIds { get; set; }
+        public List<string> sectionIds { get; set; }
         public string title { get; set; }
-        public List<User> coAuthors { get; set; }
-
-        public int sectionCount { get; set; } = 0;
-
-        public List<Section> sections { get; set; } = new List<Section>();
+        public string description { get; set; }
+        public string image { get; set; }
+        public int sectionCount { get; set; }
 
         public Questionnaire()
         {
 
         }
 
-        public void AddSection(string name)
-        {
-            sectionCount = sections.Count;
-            sectionCount++;
-            sections.Add(new Section());
-        }
+        //public void AddSection(string name)
+        //{
+        //    sectionCount = sectionIds.Count;
+        //    sectionCount++;
+        //    sectionIds.Add(new Section());
+        //}
 
         public override string ToString() => JsonSerializer.Serialize<Questionnaire>(this); 
     }

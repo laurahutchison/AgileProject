@@ -21,11 +21,11 @@ namespace Test.Services
             return Path.Combine(WebHostEnvironment.WebRootPath, "data", file);
         }
 
-        public void addProject(Project project)
-        {
-            string json = project.ToString();
-            File.WriteAllText(JsonFileName(""), json);
-        }
+        //public void addProject(Project project)
+        //{
+        //    string json = project.ToString();
+        //    File.WriteAllText(JsonFileName(""), json);
+        //}
 
         public IEnumerable<Project> GetProjects()
         {
@@ -39,9 +39,9 @@ namespace Test.Services
             }
         }
 
-        internal void addProject(Test.Pages.Questionnaire questionnaire)
-        {
-            throw new NotImplementedException();
-        }
+        //internal void addProject(Test.Pages.Questionnaire questionnaire)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

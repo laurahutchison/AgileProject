@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.Json;
 using Microsoft.AspNetCore.Hosting;
 using Test.Models;
@@ -21,11 +22,11 @@ namespace Test.Services
             get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "questionnaires.json"); }
         }
 
-        public void addQuestionnaire(Questionnaire questionnaire)
-        {
-            string json = questionnaire.ToString();
-            File.WriteAllText(JsonFileName, json);
-        }
+        //public void addQuestionnaire(Questionnaire questionnaire)
+        //{
+        //    string json = questionnaire.ToString();
+        //    File.WriteAllText(JsonFileName, json);
+        //}
 
         public IEnumerable<Questionnaire> GetQuestionnaires()
         {
@@ -39,9 +40,14 @@ namespace Test.Services
             }
         }
 
-        internal void addQuestionnaire(Test.Pages.Questionnaire questionnaire)
+        public IEnumerable<Questionnaire> GetQuestionnairesByProject(string project)
         {
-            throw new NotImplementedException();
+            return GetQuestionnaires().Where(x => x.projectId == project);
         }
+
+        //internal void addQuestionnaire(Test.Pages.Questionnaire questionnaire)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

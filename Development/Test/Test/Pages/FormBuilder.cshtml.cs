@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using MySql.Data.MySqlClient;
 using Microsoft.Extensions.Logging;
 using Test.Services;
+using Test.Models;
 
 //Code partioned from godaddy.com
 
@@ -31,11 +32,11 @@ namespace Test.Pages
         [BindProperty]
         public Questionnaire questionnaire { get; set; } = new Questionnaire();
 
-        public void OnPostDetails()
-        {
-            //using var outputStream = File.OpenWrite("~/data/test.json");
-            questionnaireService.addQuestionnaire(questionnaire);
-        }
+        //public void OnPostDetails()
+        //{
+        //    //using var outputStream = File.OpenWrite("~/data/test.json");
+        //    questionnaireService.addQuestionnaire(questionnaire);
+        //}
 
         public void OnPost()
         {
@@ -100,54 +101,5 @@ namespace Test.Pages
 
             }
         }
-    }
-
-    public class Questionnaire
-    {
-        public string id { get; set; } = "";
-        public string author { get; set; }
-        public string title { get; set; }
-
-        public int sectionCount { get; set; } = 0;
-
-        public SortedList sections { get; set; } = new SortedList();
-
-        public void AddSection(string name)
-        {
-            sectionCount = sections.Count;
-            sectionCount++;
-            sections.Add((sectionCount), new Section());
-        }
-
-        public override string ToString() => JsonSerializer.Serialize<Questionnaire>(this);
-    }
-
-    public class Section
-    {
-        public string id { get; set; }
-        public string name { get; set; }
-        public string description { get; set; }
-
-        public int questionCount { get; set; }
-
-        public SortedList questions { get; set; } = new SortedList();
-
-        public void AddQuestion(string name)
-        {
-            questionCount = questions.Count;
-            questionCount++;
-            questions.Add((questionCount), new Question());
-        }
-
-        public override string ToString() => JsonSerializer.Serialize<Section>(this);
-    }
-
-    public class Question
-    {
-        public string id { get; set; }
-        public string question { get; set; }
-        public string answer { get; set; }
-
-        public override string ToString() => JsonSerializer.Serialize<Question>(this);
     }
 }

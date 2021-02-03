@@ -94,10 +94,8 @@ a.card, a.card:visited {
     flex: 1 1 210px;
     margin: 7px;
     padding: 0;
-    background-image: linear-gradient(to bottom, #ff6264, #f4cec3), url('~css/background.jpg');
     background-size: cover;
     color: #fffaf4;
-/*    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
 }
 
     a.card:hover, a.card:focus {
@@ -112,6 +110,42 @@ a.card, a.card:visited {
     a.card:active {
         transform: translateY(5px);
     }
+
+button.card, button.card:visited {
+    opacity: 0.7;
+    border: none;
+    display: grid;
+    outline: none;
+    background-color: #ddd9d6;
+    place-items: center;
+    flex: 1 1 210px;
+    margin: 7px;
+    padding: 0;
+    color: #fffaf4;
+    transition: 0.21s;
+}
+
+    button.card:hover, button.card:focus {
+        display: grid;
+        opacity: 1;
+        border: none;
+        outline: none;
+        place-items: center;
+        flex: 1 1 210px;
+        margin: 7px;
+        padding: 0;
+        color: #fffaf4;
+        transition: 0.21s;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+button.card:active {
+    transform: translateY(5px);
+}
+
+.card h1 {
+    color: #fffaf4;
+}
 
 article {
     width: 100%;
@@ -186,7 +220,7 @@ input {
     display: block;
 }
 
-button {
+button.btn {
     border: none;
     background: none;
     color: #ff6264;
@@ -196,14 +230,14 @@ button {
     transition: 0.21s;
 }
 
-    button:hover, button:focus {
+    button.btn:hover, button.btn:focus {
         background: #f4cec3;
         padding: 13px 21px;
         border: none;
         outline: none;
     }
 
-    button:active {
+    button.btn:active {
         transform: translateY(5px);
     }
 

@@ -12,11 +12,11 @@ namespace Test.Pages
         [BindProperty(SupportsGet = true)]
         public String title { get; set; }
         public String primeAuthor { get; set; }
-        public List<String> coAuthors{ get; set; }
+        public List<String> coAuthors { get; set; }
 
         public void OnGet()
         {
-            
+
         }
     }
 }

@@ -8,9 +8,9 @@ using Test.Models;
 
 namespace Test.Services
 {
-    public class SectionService
+    public class ResponseService
     {
-        public SectionService(IWebHostEnvironment webHostEnvironment)
+        public ResponseService(IWebHostEnvironment webHostEnvironment)
         {
             WebHostEnvironment = webHostEnvironment;
         }
@@ -19,14 +19,14 @@ namespace Test.Services
 
         private string JsonFileName
         {
-            get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "sections.json"); }
+            get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "responses.json"); }
         }
 
-        public IEnumerable<Section> GetSections()
+        public IEnumerable<Response> GetResponses()
         {
             using (var jsonFileReader = File.OpenText(JsonFileName))
             {
-                return JsonSerializer.Deserialize<Section[]>(jsonFileReader.ReadToEnd(),
+                return JsonSerializer.Deserialize<Response[]>(jsonFileReader.ReadToEnd(),
                     new JsonSerializerOptions
                     {
                         PropertyNameCaseInsensitive = true
@@ -34,16 +34,14 @@ namespace Test.Services
             }
         }
 
-        public IEnumerable<Section> GetSectionsByQuestionnaire(int questionnaire)
+        public Response GetResponseById(int id)
         {
-            return GetSections().Where(x => x.questionnaireID == questionnaire);
+            return GetResponses().First(x => x.id == id);
         }
 
-        public Section GetSectionById(int sectionID)
+        public IEnumerable<Response> GetResponsesByQuestionnaire(int questionnaire)
         {
-            IEnumerable<Section> temp = GetSections().Where(x => x.id == sectionID);
-            return temp.FirstOrDefault(x => x.id == sectionID);
-
+            return GetResponses().Where(x => x.questionnaireId == questionnaire);
         }
     }
 }

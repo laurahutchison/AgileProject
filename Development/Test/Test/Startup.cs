@@ -28,8 +28,19 @@ namespace Test
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
+
+            services.AddTransient<ProjectService>();
+            services.AddTransient<UserService>();
+            services.AddTransient<ImageService>();
+            services.AddTransient<SectionService>();
+            services.AddTransient<QuestionService>();
+            services.AddTransient<ResponseService>();
+            services.AddTransient<SectionAnswerService>();
+            services.AddTransient<AnswerService>();
             services.AddTransient<QuestionnaireService>();
+
+
+            services.AddRazorPages();
             services.AddLogging();
             services.AddMvc();
 

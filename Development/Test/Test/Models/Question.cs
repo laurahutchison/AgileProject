@@ -1,17 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text.Json;
 
 namespace Test.Models
 {
     public class Question
     {
-        public string id { get; set; }
+        public int id { get; set; }
         public string question { get; set; }
-        public string answer { get; set; }
 
         public int projectID { get; set; }
 
         public int sectionID { get; set; }
+
+        public List<string> answerOptions { get; set; }
+        public List<string> answerIds { get; set; }
 
         public Question()
         {

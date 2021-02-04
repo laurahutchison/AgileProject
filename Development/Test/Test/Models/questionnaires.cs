@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
+
 
 
 namespace Test.Models
@@ -15,8 +17,10 @@ namespace Test.Models
         [Key]
         public int questionID { get; set; }
 
-        public string questionNAME { get; set; }
+        public string title { get; set; }
         public string authors { get; set; }
+
+        public string description { get; set; }
 
         //public int sectionCount { get; set; }
 
@@ -27,6 +31,18 @@ namespace Test.Models
         public int projectID { get; set; }
 
         public List<string> coAuthorIds { get; set; }
+
+        //Cally's variables, to be changed over to the above etc for the database
+
+        //public string id { get; set; }
+        //public string authorId { get; set; }
+        //public string projectId { get; set; }
+        //public List<string> coAuthorIds { get; set; }
+        //public List<string> sectionIds { get; set; }
+        //public string title { get; set; }
+        //public string description { get; set; }
+        //public string image { get; set; }
+        //public int sectionCount { get; set; }
 
         public string image { get; set; }
 

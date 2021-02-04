@@ -21,17 +21,17 @@ namespace Test.Services
             get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "questionnaires.json"); }
         }
 
-        public void addQuestionnaire(Questionnaire questionnaire)
+        public void addQuestionnaire(questionnaires questionnaire)
         {
             string json = questionnaire.ToString();
             File.WriteAllText(JsonFileName, json);
         }
 
-        public IEnumerable<Questionnaire> GetQuestionnaires()
+        public IEnumerable<questionnaires> GetQuestionnaires()
         {
             using (var jsonFileReader = File.OpenText(JsonFileName))
             {
-                return JsonSerializer.Deserialize<Questionnaire[]>(jsonFileReader.ReadToEnd(),
+                return JsonSerializer.Deserialize<questionnaires[]>(jsonFileReader.ReadToEnd(),
                     new JsonSerializerOptions
                     {
                         PropertyNameCaseInsensitive = true

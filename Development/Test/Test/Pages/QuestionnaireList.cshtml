@@ -1,0 +1,41 @@
+﻿@page
+@model Test.Pages.QuestionnaireListModel
+@{
+    ViewData["Title"] = "View Questionnaires";
+}
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+</head>
+
+<body>
+    <h3>Test Table</h3>
+    <table border="1">
+        <tr>
+            <th>Questionnaire ID</th>
+            <th>Author(s)</th>
+            <th>Title</th>
+            <th>Options</th>
+        </tr>
+        @foreach (var questionnaires in Model.QuestionnairesLists)
+        {
+            <tr>
+                <td>@questionnaires.questionID</td>
+                <td>@questionnaires.authors</td>
+                <td>@questionnaires.questionNAME</td>
+                <td>
+                    <form method="post">
+                        <ItemTemplate>
+                            <button type="submit" name="command" value="@questionnaires.questionID" asp-page-handler="Export">Export Responses</button>
+                            <!--if user == lab manager, show results for deleting questionnaire???-->
+                        </ItemTemplate>
+                    </form>
+                </td>
+
+            </tr>
+        }
+    </table>
+</body>
+</html>

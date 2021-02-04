@@ -18,6 +18,8 @@ namespace Test.Models
         public DbSet<questionanswerexample> TestTables { get; set; }
 
         public DbSet<jsonstore> JsonHandler { get; set; }
+
+        public DbSet<questionnaires> QuestionnairesHandler { get; set; }
     }
 
 }

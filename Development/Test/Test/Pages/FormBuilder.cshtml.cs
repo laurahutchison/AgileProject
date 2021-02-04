@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using Test.Services;
+using MySql.Data.MySqlClient;
 
 //Code partioned from godaddy.com
 
@@ -34,8 +35,81 @@ namespace Test.Pages
         {
             //using var outputStream = File.OpenWrite("~/data/test.json");
             questionnaireService.addQuestionnaire(questionnaire);
-        }
+            
 
+        }
+        /**
+         * Might belong more in QuestionnaireService.cs, creates a new table for each questionnaire
+         */
+        public void UniqueTableGenerate()
+        {
+            string connectionString = "Server=silva.computing.dundee.ac.uk;Database=20agileteam9db;Uid=20agileteam9;Pwd=3489.at9.9843;";
+            var questionID = questionnaire.id;
+            try {
+                using ( MySql.Data.MySqlClient.MySqlConnection mySqlConnection = new MySql.Data.MySqlClient.MySqlConnection(connectionString)){
+                    mySqlConnection.Open();
+                    if (mySqlConnection.State.ToString() == "Closed")
+                    {
+                        return;
+                    }
+                    string surveyResultTable = @"CREATE TABLE IF NOT EXISTS 20agileteam9db.survey_?(
+                        reponseID INT(11) NOT NULL AUTO_INCREMENT,
+                        questionID INT(11) NOT NULL,
+                        responseDate DATE NULL,
+                        answersText MEDIUMTEXT NULL DEFAULT NULL,
+                        PRIMARY KEY(reponseID),
+                        UNIQUE INDEX answerID_UNIQUE(reponseID ASC),
+                        INDEX questionID_idx(questionID ASC),
+                        CONSTRAINT questionID
+                        FOREIGN KEY(questionID)
+                        REFERENCES 20agileteam9db.questionnaires(questionID)
+                        ON DELETE NO ACTION
+                        ON UPDATE NO ACTION)
+                        ENGINE = InnoDB
+                        DEFAULT CHARACTER SET = utf8; ";
+                    MySqlCommand addTable = new MySqlCommand(surveyResultTable, mySqlConnection);
+                    addTable.Parameters.Add(questionID);
+                    addTable.ExecuteNonQuery();
+
+                }
+            }
+            catch (MySql.Data.MySqlClient.MySqlException sqlError)
+            {
+                Console.WriteLine(sqlError);
+            }
+            
+
+        }
+        /**
+         * Want to add this wherever Survey Responses get submitted
+         */
+        public void StoreResponse(int id, string responseText)
+        {
+            string connectionString = "Server=silva.computing.dundee.ac.uk;Database=20agileteam9db;Uid=20agileteam9;Pwd=3489.at9.9843;";
+            var questionID = questionnaire.id;
+            try
+            {
+                using (MySql.Data.MySqlClient.MySqlConnection mySqlConnection = new MySql.Data.MySqlClient.MySqlConnection(connectionString))
+                {
+                    mySqlConnection.Open();
+                    if (mySqlConnection.State.ToString() == "Closed")
+                    {
+                        return;
+                    }
+                    string addResponse = @"INSERT INTO `20agileteam9db`.`survey_test` (`questionID`,`responseDate`,`answersText`) 
+                        VALUES (@ID, CURRENT_DATE,@text);";
+                    MySqlCommand storeResponse = new MySqlCommand(addResponse, mySqlConnection);
+                    storeResponse.Parameters.AddWithValue("@ID",id);
+                    storeResponse.Parameters.AddWithValue("@text",responseText);
+                    storeResponse.ExecuteNonQuery();
+                }
+            }
+            catch (MySql.Data.MySqlClient.MySqlException sqlError)
+            {
+                Console.WriteLine(sqlError);
+            }
+
+        }
         public void OnPost()
         {
             //MySql.Data.MySqlClient.MySqlConnection mySqlConnection = new MySql.Data.MySqlClient.MySqlConnection();

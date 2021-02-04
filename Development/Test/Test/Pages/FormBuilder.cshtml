@@ -10,7 +10,7 @@
             <h1 class="display-4">Make a New Questionnaire</h1>
             <p>On this page, you can make new questionnaires from scratch.</p>
         </div>
-        <button id="start" onclick="section1()">Let's get started!</button>
+        <button class="btn" id="start" onclick="section1()">Let's get started!</button>
     </div>
 </section>
 <section id="builder1">
@@ -22,15 +22,15 @@
             <div class="underlay">
                 <h1>Questionnaire Details</h1>
                 <div id="authorGroup" class="formGroup">
-                    <label asp-for="questionnaire.author">Author:</label>
-                    <input asp-for="questionnaire.author" name="questionnaire.author" type="text" id="qAuthor">
+                    <label asp-for="holder.authors">Author:</label>
+                    <input asp-for="holder.authors" name="questionnaire.author" type="text" id="qAuthor">
                 </div>
                 <div id="titleGroup" class="formGroup">
-                    <label asp-for="questionnaire.title">Questionnaire Title:</label>
-                    <input asp-for="questionnaire.title" name="questionnaire.title" type="text" id="qTitle">
+                    <label asp-for="holder.questionNAME">Questionnaire Title:</label>
+                    <input asp-for="holder.questionNAME" name="questionnaire.title" type="text" id="qTitle">
                 </div>
             </div>
-            <button id="create">Create Questionnaire</button>
+            <button class="btn" id="create">Create Questionnaire</button>
         </form>
 
         <p id="error"></p>
@@ -77,6 +77,7 @@
     <div class="container">
         <h1 id="title"></h1>
         <h2 id="author"></h2>
+        <
     </div>
 </section>
 <section id="builder3">

@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections;
 using System.Text.Json;
+using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace Test.Models
-{
+{   
+    [Table("sections")]
     public class Section
     {
         public string id { get; set; }
@@ -13,6 +17,8 @@ namespace Test.Models
         public int questionCount { get; set; }
 
         public SortedList questions { get; set; } = new SortedList();
+
+        public int questionnaireID { get; set; }
         
         public Section()
         {

@@ -1,0 +1,22 @@
+﻿@using Microsoft.AspNetCore.Components.Web
+@using Test.Models
+@using Test.Services
+@inject ProjectService projectService
+
+<div class="flex">
+    @foreach (var project in projectService.GetProjects())
+    {
+        <a class="nav-link text-dark" asp-area="" asp-page="/Project" asp-route-id="@project.id">
+            <article class="card">
+                <h2>@project.title</h2>
+                <h3>@project.description</h3>
+                <h5>@project.authorId</h5>
+                <p>@project.coAuthorIds</p>
+            </article>
+        </a>
+    }
+</div>
+
+@code {
+
+}

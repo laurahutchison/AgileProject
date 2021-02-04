@@ -12,6 +12,9 @@ namespace Test.Pages
 {
     public class Test2Model : PageModel
     {
+
+        //declare the database connection to be used
+
         private DatabaseContext db;
         private string sPath;
         //private DatabaseContext db2;
@@ -49,6 +52,7 @@ namespace Test.Pages
 
         public IActionResult OnPost()
         {
+            //each time post is run, it "reloads" the page so some variables may have to be read in again from the database
 
             if (ModelState.IsValid == false)
             {

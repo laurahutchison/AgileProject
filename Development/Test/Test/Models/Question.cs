@@ -9,6 +9,10 @@ namespace Test.Models
         public string question { get; set; }
         public string answer { get; set; }
 
+        public int projectID { get; set; }
+
+        public int sectionID { get; set; }
+
         public Question()
         {
         }

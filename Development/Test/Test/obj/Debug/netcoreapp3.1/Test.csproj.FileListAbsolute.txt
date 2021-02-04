@@ -303,3 +303,13 @@ C:\Users\Laura\Uni\Agile\AgileProject\AgileProject\Development\Test\Test\obj\Deb
 C:\Users\Laura\Uni\Agile\AgileProject\AgileProject\Development\Test\Test\bin\Debug\netcoreapp3.1\Test.StaticWebAssets.xml
 C:\Users\Laura\Uni\Agile\AgileProject\AgileProject\Development\Test\Test\bin\Debug\netcoreapp3.1\Microsoft.AspNet.Identity.Core.dll
 C:\Users\Laura\Uni\Agile\AgileProject\AgileProject\Development\Test\Test\obj\Debug\netcoreapp3.1\Razor\Pages\QuestionnaireList.cshtml.g.cs
+C:\Users\Laura\Uni\Agile\AgileProject\AgileProject\Development\Test\Test\obj\Debug\netcoreapp3.1\Razor\Pages\Designer.cshtml.g.cs
+C:\Users\Laura\Uni\Agile\AgileProject\AgileProject\Development\Test\Test\obj\Debug\netcoreapp3.1\Razor\Pages\Login.cshtml.g.cs
+C:\Users\Laura\Uni\Agile\AgileProject\AgileProject\Development\Test\Test\obj\Debug\netcoreapp3.1\Test.RazorComponent.input.cache
+C:\Users\Laura\Uni\Agile\AgileProject\AgileProject\Development\Test\Test\obj\Debug\netcoreapp3.1\RazorDeclaration\Components\ProjectList.razor.g.cs
+C:\Users\Laura\Uni\Agile\AgileProject\AgileProject\Development\Test\Test\obj\Debug\netcoreapp3.1\Test.RazorComponent.output.cache
+C:\Users\Laura\Uni\Agile\AgileProject\AgileProject\Development\Test\Test\obj\Debug\netcoreapp3.1\RazorDeclaration\Test.dll
+C:\Users\Laura\Uni\Agile\AgileProject\AgileProject\Development\Test\Test\obj\Debug\netcoreapp3.1\Razor\Components\ProjectList.razor.g.cs
+C:\Users\Laura\Uni\Agile\AgileProject\AgileProject\Development\Test\Test\obj\Debug\netcoreapp3.1\Razor\Pages\FormEditor.cshtml.g.cs
+C:\Users\Laura\Uni\Agile\AgileProject\AgileProject\Development\Test\Test\obj\Debug\netcoreapp3.1\Razor\Pages\Project.cshtml.g.cs
+C:\Users\Laura\Uni\Agile\AgileProject\AgileProject\Development\Test\Test\obj\Debug\netcoreapp3.1\Razor\Pages\Projects.cshtml.g.cs

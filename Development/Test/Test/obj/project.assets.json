@@ -4798,7 +4798,6 @@
       "path": "system.buffers/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.1/.xml",

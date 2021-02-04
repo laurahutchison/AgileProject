@@ -9,7 +9,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using Test.Services;
-using MySql.Data.MySqlClient;
+//using MySql.Data.MySqlClient;
+using Pomelo.EntityFrameworkCore.MySql;
 
 //Code partioned from godaddy.com
 
@@ -41,10 +42,10 @@ namespace Test.Pages
         /**
          * Might belong more in QuestionnaireService.cs, creates a new table for each questionnaire
          */
-        public void UniqueTableGenerate()
+        public void UniqueTableGenerate(int id)
         {
             string connectionString = "Server=silva.computing.dundee.ac.uk;Database=20agileteam9db;Uid=20agileteam9;Pwd=3489.at9.9843;";
-            var questionID = questionnaire.id;
+            
             try {
                 using ( MySql.Data.MySqlClient.MySqlConnection mySqlConnection = new MySql.Data.MySqlClient.MySqlConnection(connectionString)){
                     mySqlConnection.Open();
@@ -68,7 +69,7 @@ namespace Test.Pages
                         ENGINE = InnoDB
                         DEFAULT CHARACTER SET = utf8; ";
                     MySqlCommand addTable = new MySqlCommand(surveyResultTable, mySqlConnection);
-                    addTable.Parameters.Add(questionID);
+                    addTable.Parameters.Add(id);
                     addTable.ExecuteNonQuery();
 
                 }

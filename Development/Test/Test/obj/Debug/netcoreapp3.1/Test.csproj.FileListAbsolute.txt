@@ -451,8 +451,6 @@ U:\Documents\GitHub\AgileProject\Development\Test\Test\bin\Debug\netcoreapp3.1\r
 U:\Documents\GitHub\AgileProject\Development\Test\Test\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 U:\Documents\GitHub\AgileProject\Development\Test\Test\obj\Debug\netcoreapp3.1\Test.AssemblyInfoInputs.cache
 U:\Documents\GitHub\AgileProject\Development\Test\Test\obj\Debug\netcoreapp3.1\Test.AssemblyInfo.cs
-U:\Documents\GitHub\AgileProject\Development\Test\Test\obj\Debug\netcoreapp3.1\Test.csproj.CoreCompileInputs.cache
-U:\Documents\GitHub\AgileProject\Development\Test\Test\obj\Debug\netcoreapp3.1\Test.MvcApplicationPartsAssemblyInfo.cache
 U:\Documents\GitHub\AgileProject\Development\Test\Test\obj\Debug\netcoreapp3.1\Test.RazorAssemblyInfo.cache
 U:\Documents\GitHub\AgileProject\Development\Test\Test\obj\Debug\netcoreapp3.1\Test.RazorAssemblyInfo.cs
 U:\Documents\GitHub\AgileProject\Development\Test\Test\obj\Debug\netcoreapp3.1\Test.TagHelpers.input.cache
@@ -479,3 +477,5 @@ U:\Documents\GitHub\AgileProject\Development\Test\Test\obj\Debug\netcoreapp3.1\T
 U:\Documents\GitHub\AgileProject\Development\Test\Test\obj\Debug\netcoreapp3.1\Test.pdb
 U:\Documents\GitHub\AgileProject\Development\Test\Test\obj\Debug\netcoreapp3.1\Test.genruntimeconfig.cache
 U:\Documents\GitHub\AgileProject\Development\Test\Test\obj\Debug\netcoreapp3.1\Test.csprojAssemblyReference.cache
+U:\Documents\GitHub\AgileProject\Development\Test\Test\obj\Debug\netcoreapp3.1\Test.csproj.CoreCompileInputs.cache
+U:\Documents\GitHub\AgileProject\Development\Test\Test\obj\Debug\netcoreapp3.1\Test.MvcApplicationPartsAssemblyInfo.cache

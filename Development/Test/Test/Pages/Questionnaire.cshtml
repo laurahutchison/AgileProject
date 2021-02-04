@@ -1,4 +1,110 @@
 ﻿@page
 @model Test.Pages.QuestionnaireModel
 @{
+    int sectionCount = 0;
+    int questionCount = 0;
+
+    var random = new Random();
+    List<string> primaryColours = new List<string> { "#4365e2ec", "#ff6264ec", "#01d17cec" };
+    List<string> secondaryColours = new List<string> { "#f4cec3ec", "#ffecd2ec", "#d1e2f2ec", "#c4ebd0ec" };
+
+    string degree = random.Next(0, 360).ToString() + "deg";
+    string colour1 = primaryColours[random.Next(primaryColours.Count)];
+    string colour2 = secondaryColours[random.Next(secondaryColours.Count)];
+
+    string image = Model.questionnaire.image;
+    string background = "background-image: linear-gradient(" + degree + ", " + colour1 + ", " + colour2 + "), url('" + image + "');";
 }
+
+<section>
+    <div class="container" style="padding: 0 73px">
+        <h1 style="margin-left: 7px">@Model.questionnaire.title</h1>
+        <div class="flex" height="224px">
+            @*<img class="img" src="@image" width="210px" height="100%"/>*@
+            <div class="img" height="210px" width="210px" style="@background">
+                <div width="210px" height="210px"></div>
+            </div>
+            <p class="description" height="210px" width="210px">@Model.questionnaire.description</p>
+        </div>
+        
+    </div>
+</section>
+<section>
+    <div class="container" style="padding: 0 73px">
+        <h1 style="margin-left: 7px">Researchers</h1>
+        <div class="flex">
+            @foreach (var user in Model.users)
+            {
+                degree = random.Next(0, 360).ToString() + "deg";
+                colour1 = primaryColours[random.Next(primaryColours.Count)];
+                colour2 = secondaryColours[random.Next(secondaryColours.Count)];
+
+                image = user.image;
+                background = "background-image: linear-gradient(" + degree + ", " + colour1 + ", " + colour2 + "), url('" + image + "');";
+
+                string name = Model._userService.GetNameByID(user.id);
+
+                <a class="card-user" asp-area="" asp-page="/Project" asp-route-id="@user.id" style="@background">
+                    <article class="">
+                        <h2 class="title">@name</h2>
+                    </article>
+                </a>
+            }
+            <button class="card" onclick="">
+                <h1>+</h1>
+            </button>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container" id="qContent">
+        <h1>@Model.subpage</h1>
+
+        @if (Model.subpage == "questions")
+        {
+            <div class="flex-left">
+                <a asp-area="" asp-page="" asp-fragment="qContent" asp-route-id="@Model.id" asp-route-subpage="responses" class="btn" style="display:inline-block;flex: 0 0 57px;margin:21px 21px 21px 0;">Responses</a>
+                @*<a asp-area="" asp-page="" asp-fragment="qContent" asp-route-id="@Model.id" asp-route-subpage="charts" class="btn" style="display: inline-block;flex: 0 0 57px;margin: 21px 21px 21px 0;">Charts</a>*@
+            </div>
+
+            @foreach (var part in Model.sections)
+            {
+                sectionCount++;
+                Model.questions = Model._questionService.GetQuestionsBySection(part.id);
+
+                <div class="section" id="@part.id">
+                    <h2>@sectionCount . @part.title</h2>
+                    <p>@part.description</p>
+
+
+                    @foreach (var question in Model.questions)
+                    {
+                        questionCount++;
+
+                        <p><strong>@questionCount) @question.question</strong><br /></p>
+                        <ul>
+                            @foreach (var option in question.answerOptions)
+                            {
+                                <li>@option</li>
+                            }
+                        </ul>
+                    }
+                </div>
+            }
+        }
+        else if (Model.subpage == "responses")
+        {
+            <div class="flex-left">
+                <a asp-area="" asp-page="" asp-fragment="qContent" asp-route-id="@Model.id" asp-route-subpage="questions" class="btn" style="display:inline-block;flex: 0 0 57px;margin:21px 21px 21px 0;">Questions</a>
+                @*<a asp-area="" asp-page="" asp-fragment="qContent" asp-route-id="@Model.id" asp-route-subpage="charts" class="btn" style="display: inline-block;flex: 0 0 57px;margin: 21px 21px 21px 0;">Charts</a>*@
+            </div>
+        }
+        @*else if (Model.subpage == "charts")
+        {
+            <div class="flex-left">
+                <a asp-area="" asp-page="" asp-fragment="qContent" asp-route-id="@Model.id" asp-route-subpage="questions" class="btn" style="display:inline-block;flex: 0 0 57px;margin:21px 21px 21px 0;">Questions</a>
+                <a asp-area="" asp-page="" asp-fragment="qContent" asp-route-id="@Model.id" asp-route-subpage="responses" class="btn" style="display: inline-block;flex: 0 0 57px;margin: 21px 21px 21px 0;">Responses</a>
+            </div>
+        }*@
+    </div>
+</section>

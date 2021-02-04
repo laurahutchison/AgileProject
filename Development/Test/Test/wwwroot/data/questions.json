@@ -1,0 +1,18 @@
+﻿[
+  {
+    "id": "1",
+    "sectionId": "1",
+    "questionType": "text",
+    "question": "Is Agile Good?",
+    "answerOptions": [],
+    "answerIds": [ "1" ]
+  },
+  {
+    "id": "2",
+    "sectionId": "1",
+    "questionType": "",
+    "question": "Did you answer truthly?",
+    "answerOptions": [ "Yes", "No" ],
+    "answerIds": [ "2" ]
+  }
+]

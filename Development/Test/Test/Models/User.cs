@@ -8,8 +8,9 @@ namespace Test.Models
         public string id { get; set; }
         public string firstName { get; set; }
         public string surname { get; set; }
-        public List<Project> projects { get; set; }
-        public List<Questionnaire> questionnaires { get; set; }
+        public string image { get; set; }
+        public List<string> projectIds { get; set; }
+        public List<string> questionnaireIds { get; set; }
 
         public User()
         {

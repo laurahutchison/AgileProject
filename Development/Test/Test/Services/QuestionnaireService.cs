@@ -40,6 +40,11 @@ namespace Test.Services
             }
         }
 
+        public Questionnaire GetQuestionnaireById(string id)
+        {
+            return GetQuestionnaires().First(x => x.id == id);
+        }
+
         public IEnumerable<Questionnaire> GetQuestionnairesByProject(string project)
         {
             return GetQuestionnaires().Where(x => x.projectId == project);

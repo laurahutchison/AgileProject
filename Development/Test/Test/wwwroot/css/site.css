@@ -34,6 +34,7 @@ header {
     margin: auto;
     padding: 0;
     height: 48px;
+    z-index:210;
 }
 
 nav {
@@ -75,18 +76,32 @@ main {
 }
 
 section {
-    width: 960px;
-    margin: auto;
     padding: 21vh 0 0;
     transition: 0.21s;
-    height: 100%;
+    height: 100vh;
 }
+
+    section:nth-child(even) {
+        background-color: #464646;
+        color: #fffaf4;
+    }
+
+        section:nth-child(even) div h1 {
+            color: #fffaf4;
+        }
 
 .flex {
     margin: 13px 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+}
+
+.flex-left {
+    margin: 13px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
 a.card, a.card:visited {
@@ -104,14 +119,15 @@ a.card, a.card:visited {
         margin: 7px;
         padding: 0;
         color: #fffaf4;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        box-shadow: 0 4px 8px 0 #46464633, 0 6px 20px 0 #46464630;
+        /*        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
     }
 
     a.card:active {
         transform: translateY(5px);
     }
 
-button.card, button.card:visited {
+button.card, button.card:focus:not(.focus-visible), a.card-user, a.card-user:visited {
     opacity: 0.7;
     border: none;
     display: grid;
@@ -123,9 +139,10 @@ button.card, button.card:visited {
     padding: 0;
     color: #fffaf4;
     transition: 0.21s;
+    box-shadow: none;
 }
 
-    button.card:hover, button.card:focus {
+    button.card:hover, button.card:focus, a.card-user:hover, a.card-user:focus {
         display: grid;
         opacity: 1;
         border: none;
@@ -136,11 +153,17 @@ button.card, button.card:visited {
         padding: 0;
         color: #fffaf4;
         transition: 0.21s;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        box-shadow: 0 4px 8px 0 #46464633, 0 6px 20px 0 #46464630;
+/*        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
     }
 
-button.card:active {
+button.card:active, a.card-user:active {
     transform: translateY(5px);
+}
+
+.card-user article {
+    display: grid;
+    place-items: center;
 }
 
 .card h1 {
@@ -179,12 +202,30 @@ article {
     white-space: nowrap;
 }
 
+.card-user {
+
+}
+
+.img {
+    flex: 1 1 210px;
+    padding: 157px 0;
+    margin: 7px;
+    background-size: cover;
+    box-shadow: 0 4px 8px 0 #46464633, 0 6px 20px 0 #46464630;
+}
+
+.description { 
+    flex: 1 1 210px;
+    margin: 7px;
+}
+
 h1 {
     color: #4365e2;
     margin: 0;
     font-weight: 800;
     font-size: 84px;
     line-height: 84px;
+    text-transform: capitalize;
 }
 
 p {
@@ -220,7 +261,7 @@ input {
     display: block;
 }
 
-button.btn {
+.btn, .btn:visited {
     border: none;
     background: none;
     color: #ff6264;
@@ -228,17 +269,21 @@ button.btn {
     font-weight: 500;
     padding: 13px 21px 13px 0;
     transition: 0.21s;
+    cursor: pointer;
 }
 
-    button.btn:hover, button.btn:focus {
+    .btn:hover, .btn:focus {
         background: #f4cec3;
         padding: 13px 21px;
+        color: #ff6264;
         border: none;
         outline: none;
+        cursor: pointer;
     }
 
-    button.btn:active {
+    .btn:active {
         transform: translateY(5px);
+        cursor: pointer;
     }
 
 /*End of main*/

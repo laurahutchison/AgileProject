@@ -24,7 +24,7 @@
 
                 string name2 = Model._userService.GetNameByID(questionnaire.authorId);
                 string names2 = Model._userService.GetNamesFromList(questionnaire.coAuthorIds);
-                <a class="card" asp-area="" asp-page="/Questionnaire" asp-route-id="@questionnaire.id" style="@background">
+                <a class="card" asp-area="" asp-page="/Questionnaire" asp-route-id="@questionnaire.id" asp-route-subpage="questions" style="@background">
                     <article class="">
                         <h2 class="title">@questionnaire.title</h2>
                         <p class="authors">

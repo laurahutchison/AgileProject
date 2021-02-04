@@ -37,7 +37,14 @@
       <File FileName="Test/wwwroot/data/users.json" />
       <File FileName="Test/Services/ImageService.cs" />
       <File FileName="Test/Pages/Questionnaire.cshtml" />
-      <File FileName="Test/Pages/Questionnaire.cshtml.cs" Line="16" Column="2" />
+      <File FileName="Test/Pages/Questionnaire.cshtml.cs" Line="24" Column="141" />
+      <File FileName="Test/wwwroot/js/site.js" />
+      <File FileName="Test/Services/SectionService.cs" />
+      <File FileName="Test/wwwroot/data/sections.json" />
+      <File FileName="Test/Pages/Index.cshtml.cs" />
+      <File FileName="Test/Services/QuestionService.cs" />
+      <File FileName="Test/Models/Answer.cs" />
+      <File FileName="Test/wwwroot/data/questions.json" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -47,6 +54,7 @@
               <Node name="Components" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Pages" expanded="True">
+                <Node name="Shared" expanded="True" />
                 <Node name="Questionnaire.cshtml" expanded="True">
                   <Node name="Questionnaire.cshtml.cs" selected="True" />
                 </Node>
@@ -55,6 +63,7 @@
               <Node name="wwwroot" expanded="True">
                 <Node name="css" expanded="True" />
                 <Node name="data" expanded="True" />
+                <Node name="js" expanded="True" />
               </Node>
               <Node name="appsettings.json" expanded="True" />
             </Node>

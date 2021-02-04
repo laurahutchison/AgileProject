@@ -34,6 +34,11 @@ namespace Test.Services
             }
         }
 
+        public IEnumerable<User> GetUsersByQuestionnaire(string questionnaire)
+        {
+            return GetUsers().Where(x => x.questionnaireIds.Contains(questionnaire));
+        }
+
         public User GetUserByID(string id)
         {
             return GetUsers().First(x => x.id == id);

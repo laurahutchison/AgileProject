@@ -49,7 +49,7 @@
                 image = user.image;
                 background = "background-image: linear-gradient(" + degree + ", " + colour1 + ", " + colour2 + "), url('" + image + "');";
 
-                string name = Model._userService.GetNameByID(user.id);
+                string name = Model._userService.GetNameById(user.id);
 
                 <a class="card-user" asp-area="" asp-page="/Project" asp-route-id="@user.id" style="@background">
                     <article class="">

@@ -3,6 +3,7 @@
     "id": "1",
     "sectionId": "1",
     "questionType": "text",
+    "required": true,
     "question": "Is Agile Good?",
     "answerOptions": [],
     "answerIds": [ "1" ]
@@ -10,7 +11,8 @@
   {
     "id": "2",
     "sectionId": "1",
-    "questionType": "",
+    "questionType": "radio",
+    "required": false,
     "question": "Did you answer truthly?",
     "answerOptions": [ "Yes", "No" ],
     "answerIds": [ "2" ]

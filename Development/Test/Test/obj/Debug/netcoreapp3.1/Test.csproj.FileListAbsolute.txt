@@ -185,3 +185,5 @@ C:/Users/Laura/Uni/Agile/AgileProject/AgileProject/Development/Test/Test/obj/Deb
 /Users/parsnips/Documents/Uni/Year 3/Agile/Assignment/Repo/Development/Test/Test/obj/Debug/netcoreapp3.1/RazorDeclaration/Test.dll
 /Users/parsnips/Documents/Uni/Year 3/Agile/Assignment/Repo/Development/Test/Test/obj/Debug/netcoreapp3.1/Razor/Components/ProjectList.razor.g.cs
 /Users/parsnips/Documents/Uni/Year 3/Agile/Assignment/Repo/Development/Test/Test/obj/Debug/netcoreapp3.1/Razor/Pages/Questionnaire.cshtml.g.cs
+/Users/parsnips/Documents/Uni/Year 3/Agile/Assignment/Repo/Development/Test/Test/obj/Debug/netcoreapp3.1/Razor/Pages/Questionnaire2.cshtml.g.cs
+/Users/parsnips/Documents/Uni/Year 3/Agile/Assignment/Repo/Development/Test/Test/obj/Debug/netcoreapp3.1/Razor/Pages/InfoSheet.cshtml.g.cs

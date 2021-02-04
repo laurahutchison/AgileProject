@@ -1,7 +1,7 @@
 ﻿@page
 @model Test.Pages.ProjectModel
 @{
-    string name = Model._userService.GetNameByID(Model.project.authorId);
+    string name = Model._userService.GetNameById(Model.project.authorId);
     string names = Model._userService.GetNamesFromList(Model.project.coAuthorIds);
 }
 <section>
@@ -22,7 +22,7 @@
                 string image = questionnaire.image;
                 string background = "background-image: linear-gradient(" + degree + ", " + colour1 + ", " + colour2 + "), url('" + image + "');";
 
-                string name2 = Model._userService.GetNameByID(questionnaire.authorId);
+                string name2 = Model._userService.GetNameById(questionnaire.authorId);
                 string names2 = Model._userService.GetNamesFromList(questionnaire.coAuthorIds);
                 <a class="card" asp-area="" asp-page="/Questionnaire" asp-route-id="@questionnaire.id" asp-route-subpage="questions" style="@background">
                     <article class="">

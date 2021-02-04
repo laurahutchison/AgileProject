@@ -3,6 +3,7 @@
     "id": "1",
     "firstName": "Cally",
     "surname": "Parsons",
+    "email": "cparsnips2157@gmail.com",
     "image": "",
     "projectIds": [ "1", "2", "3", "4", "5" ],
     "questionnaireIds": [ "1", "2", "3", "4", "5", "6", "7" ]
@@ -12,6 +13,7 @@
     "id": "2",
     "firstName": "Michael",
     "surname": "Olori",
+    "email": "test@gmail.com",
     "image": "",
     "projectIds": [ "1" ],
     "questionnaireIds": [ "1" ]
@@ -21,6 +23,7 @@
     "id": "3",
     "firstName": "Laura",
     "surname": "Hutchison",
+    "email": "test@hotmail.com",
     "image": "",
     "projectIds": [ "4" ],
     "questionnaireIds": [ "5" ]
@@ -30,6 +33,7 @@
     "id": "4",
     "firstName": "Ema",
     "surname": "Anicic",
+    "email": "test@gmail.com",
     "image": "",
     "projectIds": [ "3", "5" ],
     "questionnaireIds": [ "4", "6", "7" ]
@@ -39,6 +43,7 @@
     "id": "5",
     "firstName": "Gina",
     "surname": "Fenton",
+    "email": "test@hotmail.com",
     "image": "",
     "projectIds": [ "3" ],
     "questionnaireIds": [ "4" ]

@@ -22,7 +22,7 @@
                 string image = project.image;
                 string background = "background-image: linear-gradient(" + degree + ", " + colour1 + ", " + colour2 + "), url('" + image + "');";
 
-                string name = Model._userService.GetNameByID(project.authorId);
+                string name = Model._userService.GetNameById(project.authorId);
                 string names = Model._userService.GetNamesFromList(project.coAuthorIds);
 
                 <a class="card" asp-area="" asp-page="/Project" asp-route-id="@project.id" style="@background">

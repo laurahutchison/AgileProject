@@ -1,0 +1,82 @@
+﻿@page
+@model Test.Pages.Questionnaire2Model
+@{
+    int sectionCount = 0;
+    int questionCount = 1;
+    int responseCount = 0;
+    int sectionAnswerCount = 0;
+    int answerCount = 0;
+
+    string names = Model._userService.GetNameById(Model.questionnaire.authorId);
+    names += (" / " + Model._userService.GetNamesFromList(Model.questionnaire.coAuthorIds));
+    string emails = Model._userService.GetEmailById(Model.questionnaire.authorId);
+    emails += (" / " + Model._userService.GetEmailsFromList(Model.questionnaire.coAuthorIds));
+}
+
+<section>
+    <div class="container">
+        <h1>@Model.questionnaire.title</h1>
+        <p>We would like to invite you to take part in our research study. Before you decide if you wish to take part,we would like you to understand why the research is being undertaken and what it will involve.  Please read the information sheet at <a asp-page="/InfoSheet" asp-route-id="@Model.questionnaire.id">this</a> link</p>
+        <p>
+            @names<br/>
+            @emails
+        </p>
+        <p>Thank you for taking the time to read this information sheet and for your interest in this study.</p>
+        <p class="required">* Required</p>
+
+
+        <form method="post">
+            <div class="section">
+                <label><strong>@questionCount) I have read the information above. By completing this questionnaire, I agree to my data being used for the research project and I agree that I am 18 years of age or older. <span class="required">*</span></strong></label><br />
+                <input type="checkbox" value="aye" required/>
+            </div>
+            @foreach (var part in Model.sections)
+            {
+                sectionCount++;
+                Model.questions = Model._questionService.GetQuestionsBySection(part.id);
+
+                <div class="section">
+                    <h2>@sectionCount . @part.title</h2>
+                    <p>@part.description</p>
+                    @foreach (var question in Model.questions)
+                    {
+                        questionCount++;
+                <div class="question">
+                    @if (question.required)
+                    {
+                        <label><strong>@questionCount) @question.question <span class="required">*</span></strong></label><br />
+                        @if (question.answerOptions.Count != 0)
+                        {
+                            @foreach (var option in question.answerOptions)
+                            {
+                                <input type="@question.questionType" value="@option" id="@question.id" name="@question.id" required /><label for="@question.id">@option</label><br />
+                            }
+                        }
+                        else
+                        {
+                            <input type="@question.questionType" value="" id="@question.id" name="@question.id" required /><br />
+                        }
+                    }
+                    else
+                    {
+                        <label><strong>@questionCount) @question.question</strong></label><br />
+                        @if (question.answerOptions.Count != 0)
+                        {
+                            @foreach (var option in question.answerOptions)
+                            {
+                                <input type="@question.questionType" value="@option" id="@question.id" name="@question.id" /><label for="@question.id">@option</label><br />
+                            }
+                        }
+                        else
+                        {
+                            <input type="@question.questionType" value="" id="@question.id" name="@question.id" /><br />
+                        }
+                    }
+                </div>
+                    }
+                </div>
+                <input type="submit" class="btn" value="Send" style="margin-left: 0;" />
+            }
+        </form>
+    </div>
+</section>

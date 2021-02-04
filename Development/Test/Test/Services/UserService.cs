@@ -39,14 +39,14 @@ namespace Test.Services
             return GetUsers().Where(x => x.questionnaireIds.Contains(questionnaire));
         }
 
-        public User GetUserByID(string id)
+        public User GetUserById(string id)
         {
             return GetUsers().First(x => x.id == id);
         }
 
-        public string GetNameByID(string id)
+        public string GetNameById(string id)
         {
-            User user = GetUserByID(id);
+            User user = GetUserById(id);
             string name = user.firstName + " " + user.surname;
             return name;
         }
@@ -59,11 +59,11 @@ namespace Test.Services
             {
                 if (id != ids.Last())
                 {
-                    names += (GetNameByID(id) + ", ");
+                    names += (GetNameById(id) + " / ");
                 }
                 else if (id == ids.Last())
                 {
-                    names += GetNameByID(id);
+                    names += GetNameById(id);
                 }
             }
 
@@ -73,6 +73,36 @@ namespace Test.Services
             }
 
             return names;
+        }
+
+        public string GetEmailById(string id)
+        {
+            User user = GetUserById(id);
+            return user.email;
+        }
+
+        public string GetEmailsFromList(List<string> ids)
+        {
+            string emails = "";
+
+            foreach (var id in ids)
+            {
+                if (id != ids.Last())
+                {
+                    emails += (GetEmailById(id) + " / ");
+                }
+                else if (id == ids.Last())
+                {
+                    emails += GetEmailById(id);
+                }
+            }
+
+            if (emails == "")
+            {
+                emails = "n/a";
+            }
+
+            return emails;
         }
     }
 }

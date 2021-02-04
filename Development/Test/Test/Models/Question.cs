@@ -9,6 +9,7 @@ namespace Test.Models
         public string id { get; set; }
         public string sectionId { get; set; }
         public string questionType { get; set; }
+        public bool required { get; set; }
         public string question { get; set; }
         public List<string> answerOptions { get; set; }
         public List<string> answerIds{ get; set; }

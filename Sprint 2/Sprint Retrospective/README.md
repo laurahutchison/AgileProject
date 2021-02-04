@@ -1,3 +1,3 @@
 # Sprint Retrospective
 
-You should include in this folder anything that relates to your Sprint Retrospective.
+Here is our sprint 1 retrospective link: https://docs.google.com/document/d/1bxcd-eaXukzrS5l3hpRz5wP2ms0Xin0U2gPyL6V4yLg/edit?usp=sharing made on day after our sprint review

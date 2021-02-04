@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json;
 
 namespace Test.Models
 {
@@ -15,5 +16,7 @@ namespace Test.Models
         public User()
         {
         }
+
+        public override string ToString() => JsonSerializer.Serialize<User>(this);
     }
 }

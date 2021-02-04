@@ -1,0 +1,15 @@
+﻿[
+  {
+    "id": "1",
+    "responseId": "1",
+    "sectionId": "1",
+    "answerIds": [ "1", "2" ]
+  },
+
+  {
+    "id": "2",
+    "responseId": "2",
+    "sectionId": "1",
+    "answerIds": [ "3", "4" ]
+  }
+]

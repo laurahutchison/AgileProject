@@ -3,6 +3,11 @@
 @{
     int sectionCount = 0;
     int questionCount = 0;
+    int responseCount = 0;
+    int sectionAnswerCount = 0;
+    int answerCount = 0;
+
+    
 
     var random = new Random();
     List<string> primaryColours = new List<string> { "#4365e2ec", "#ff6264ec", "#01d17cec" };
@@ -14,6 +19,8 @@
 
     string image = Model.questionnaire.image;
     string background = "background-image: linear-gradient(" + degree + ", " + colour1 + ", " + colour2 + "), url('" + image + "');";
+
+
 }
 
 <section>
@@ -62,11 +69,7 @@
 
         @if (Model.subpage == "questions")
         {
-            <div class="flex-left">
-                <a asp-area="" asp-page="" asp-fragment="qContent" asp-route-id="@Model.id" asp-route-subpage="responses" class="btn" style="display:inline-block;flex: 0 0 57px;margin:21px 21px 21px 0;">Responses</a>
-                @*<a asp-area="" asp-page="" asp-fragment="qContent" asp-route-id="@Model.id" asp-route-subpage="charts" class="btn" style="display: inline-block;flex: 0 0 57px;margin: 21px 21px 21px 0;">Charts</a>*@
-            </div>
-
+            <a asp-area="" asp-page="" asp-fragment="qContent" asp-route-id="@Model.id" asp-route-subpage="responses" class="btn" style="display:inline-block;flex: 0 0 57px;margin:21px 21px 21px 0;">Responses</a>
             @foreach (var part in Model.sections)
             {
                 sectionCount++;
@@ -94,17 +97,55 @@
         }
         else if (Model.subpage == "responses")
         {
-            <div class="flex-left">
-                <a asp-area="" asp-page="" asp-fragment="qContent" asp-route-id="@Model.id" asp-route-subpage="questions" class="btn" style="display:inline-block;flex: 0 0 57px;margin:21px 21px 21px 0;">Questions</a>
-                @*<a asp-area="" asp-page="" asp-fragment="qContent" asp-route-id="@Model.id" asp-route-subpage="charts" class="btn" style="display: inline-block;flex: 0 0 57px;margin: 21px 21px 21px 0;">Charts</a>*@
+            <a asp-area="" asp-page="" asp-fragment="qContent" asp-route-id="@Model.id" asp-route-subpage="questions" class="btn" style="display:inline-block;flex: 0 0 57px;margin:21px 21px 21px 0;">Questions</a>
+
+            <div>
+                <span><button onClick="changeResponse(-1)">&#10094;</button></span>
+                <span id="indicator">Current Response: 1</span>
+                <span><button onClick="changeResponse(+1)">&#10095;</button></span>
             </div>
+
+            foreach (var response in Model.responses)
+            {
+                responseCount++;
+
+                Model.sectionAnswers = Model._sectionAnswerService.GetSectionAnswersByResponse(response.id);
+                sectionAnswerCount = 0;
+                answerCount = 0;
+
+                <div class="response">
+                    @foreach (var sectionAnswer in Model.sectionAnswers)
+                    {
+                        sectionAnswerCount++;
+                        Model.answers = Model._answerService.GetAnswersBySectionAnswer(sectionAnswer.id);
+                        Model.section = @Model._sectionService.GetSectionById(sectionAnswer.sectionId);
+
+                        <div class="section" id="@sectionAnswer.id">
+                            <h2>@sectionAnswerCount . @Model.section.title</h2>
+                            <p>@Model.section.description</p>
+
+                            @foreach (var answer in Model.answers)
+                            {
+                                answerCount++;
+                                Model.question = Model._questionService.GetQuestionById(answer.questionId);
+
+                                <p><strong>@answerCount) @Model.question.question</strong><br /></p>
+                                <ul>
+                                    @foreach (var option in answer.answers)
+                                    {
+                                        <li>@option</li>
+                                    }
+                                </ul>
+                            }
+                        </div>
+                    }
+                </div>
+            }
+            <button class="btn">Export Responses</button>
+
+            @*<div class="flex">
+
+            </div>*@
         }
-        @*else if (Model.subpage == "charts")
-        {
-            <div class="flex-left">
-                <a asp-area="" asp-page="" asp-fragment="qContent" asp-route-id="@Model.id" asp-route-subpage="questions" class="btn" style="display:inline-block;flex: 0 0 57px;margin:21px 21px 21px 0;">Questions</a>
-                <a asp-area="" asp-page="" asp-fragment="qContent" asp-route-id="@Model.id" asp-route-subpage="responses" class="btn" style="display: inline-block;flex: 0 0 57px;margin: 21px 21px 21px 0;">Responses</a>
-            </div>
-        }*@
     </div>
 </section>

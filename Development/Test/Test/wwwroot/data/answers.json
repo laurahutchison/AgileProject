@@ -1,0 +1,29 @@
+﻿[
+  {
+    "id": "1",
+    "sectionAnswerId": "1",
+    "questionId": "1",
+    "answers": [ "I think it works well for some projects but not so well for others, especially web" ]
+  },
+
+  {
+    "id": "2",
+    "sectionAnswerId": "1",
+    "questionId": "2",
+    "answers": [ "yes" ]
+  },
+
+  {
+    "id": "3",
+    "sectionAnswerId": "2",
+    "questionId": "1",
+    "answers": [ "not sure" ]
+  },
+
+  {
+    "id": "4",
+    "sectionAnswerId": "2",
+    "questionId": "2",
+    "answers": [ "no" ]
+  }
+]

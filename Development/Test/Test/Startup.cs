@@ -32,6 +32,9 @@ namespace Test
             services.AddTransient<ImageService>();
             services.AddTransient<SectionService>();
             services.AddTransient<QuestionService>();
+            services.AddTransient<ResponseService>();
+            services.AddTransient<SectionAnswerService>();
+            services.AddTransient<AnswerService>();
             services.AddLogging();
         }
 

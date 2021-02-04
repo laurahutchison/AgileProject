@@ -38,5 +38,10 @@ namespace Test.Services
         {
             return GetSections().Where(x => x.questionnaireId == questionnaire);
         }
+
+        public Section GetSectionById(string id)
+        {
+            return GetSections().First(x => x.id == id);
+        }
     }
 }

@@ -8,9 +8,9 @@ using Test.Models;
 
 namespace Test.Services
 {
-    public class QuestionService
+    public class SectionAnswerService
     {
-        public QuestionService(IWebHostEnvironment webHostEnvironment)
+        public SectionAnswerService(IWebHostEnvironment webHostEnvironment)
         {
             WebHostEnvironment = webHostEnvironment;
         }
@@ -19,14 +19,14 @@ namespace Test.Services
 
         private string JsonFileName
         {
-            get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "questions.json"); }
+            get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "sectionAnswers.json"); }
         }
 
-        public IEnumerable<Question> GetQuestions()
+        public IEnumerable<SectionAnswer> GetSectionAnswers()
         {
             using (var jsonFileReader = File.OpenText(JsonFileName))
             {
-                return JsonSerializer.Deserialize<Question[]>(jsonFileReader.ReadToEnd(),
+                return JsonSerializer.Deserialize<SectionAnswer[]>(jsonFileReader.ReadToEnd(),
                     new JsonSerializerOptions
                     {
                         PropertyNameCaseInsensitive = true
@@ -34,14 +34,9 @@ namespace Test.Services
             }
         }
 
-        public IEnumerable<Question> GetQuestionsBySection(string section)
+        public IEnumerable<SectionAnswer> GetSectionAnswersByResponse(string response)
         {
-            return GetQuestions().Where(x => x.sectionId == section);
-        }
-
-        public Question GetQuestionById(string id)
-        {
-            return GetQuestions().First(x => x.id == id);
+            return GetSectionAnswers().Where(x => x.responseId == response);
         }
     }
 }

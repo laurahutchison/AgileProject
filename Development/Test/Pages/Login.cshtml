@@ -1,0 +1,54 @@
+﻿@page
+@model Test.LoginModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = "_LayoutOut";
+}
+
+<html>
+<body>
+    <div class="form-horizontal">
+
+        <br />
+        <br />
+        <br />
+
+
+        <h1>Login</h1>
+
+        <!-- checking that the entered credentials are authorised-->
+        @if (ViewData["password"] != null && Convert.ToBoolean(ViewData["auth"]) == true)
+        {
+            <!-- acknowledge authorisation-->
+            <h2> You have logged in! :) </h2>
+        }
+        else if (ViewData["password"] != null && Convert.ToBoolean(ViewData["auth"]) == false)
+        {
+            <h2> You have failed to login! :( </h2>
+
+        }
+
+       
+    <div class="text-center">
+        <form method="post">
+            <label>Please enter your username:</label>
+            <input type="text" asp-for="log.username" placeholder="john doe" />
+            <label>Please enter your password:</label>
+            <input type="text" asp-for="log.passwordHash" placeholder="password" />
+            <div>
+                <button type="submit" class="btn btn-default" asp-page-handler="Login">Go</button>
+            </div>
+        </form>
+    </div>
+        
+
+        <h1>Add login</h1>
+        <form method="post">
+            <input type="text" asp-for="log.username" placeholder="john doe" />
+            <input type="text" asp-for="log.passwordHash" placeholder="password" />
+            <button type="submit" asp-page-handler="Create">Submit</button>
+        </form>
+
+    </div>
+</body>
+</html>

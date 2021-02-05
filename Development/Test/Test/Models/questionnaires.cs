@@ -30,7 +30,8 @@ namespace Test.Models
 
         public int projectID { get; set; }
 
-        public List<string> coAuthorIds { get; set; }
+        [NotMapped]
+        public List<int> coAuthorIds { get; set; }
 
         //Cally's variables, to be changed over to the above etc for the database
 
@@ -43,8 +44,6 @@ namespace Test.Models
         //public string description { get; set; }
         //public string image { get; set; }
         //public int sectionCount { get; set; }
-
-        public string image { get; set; }
 
         /**
          * Want to add this wherever Survey Responses get submitted

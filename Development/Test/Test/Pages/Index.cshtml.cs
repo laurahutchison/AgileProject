@@ -25,59 +25,7 @@ namespace Test.Pages
 
         public void OnGet()
         {
-            MySql.Data.MySqlClient.MySqlConnection mySqlConnection = new MySql.Data.MySqlClient.MySqlConnection();
-
-            mySqlConnection.ConnectionString = connectionString;
-            try
-            {
-                using (MySqlConnection sqlCon = new MySqlConnection(connectionString))
-                {
-                    mySqlConnection.Open();
-
-
-                    switch (mySqlConnection.State)
-
-                    {
-
-                        case System.Data.ConnectionState.Open:
-
-                            // Connection has been made
-                            Console.Write("1");
-                            break;
-
-                        case System.Data.ConnectionState.Closed:
-
-                            // Connection could not be made, throw an error
-                            Console.Write("2");
-                            throw new Exception("The database connection state is Closed");
-
-                        default:
-
-                            // Connection is actively doing something else
-
-                            break;
-                            //MySqlCommand sqlCmd = new MySqlCommand("ProductAddOrEdit", sqlCon);
-                            //sqlCmd.CommandType = CommandType.StoredProcedure;
-                            //sqlCmd.ExecuteNonQuery();
-                    }
-                }
-            }
-
-            catch (MySql.Data.MySqlClient.MySqlException mySqlException)
-
-            {
-
-                // Use the mySqlException object to handle specific MySql errors
-
-            }
-
-            catch (Exception exception)
-
-            {
-
-                // Use the exception object to handle all other non-MySql specific errors
-
-            }
+            
         }
     }
 }

@@ -17,8 +17,7 @@
     string colour1 = primaryColours[random.Next(primaryColours.Count)];
     string colour2 = secondaryColours[random.Next(secondaryColours.Count)];
 
-    string image = Model.questionnaire.image;
-    string background = "background-image: linear-gradient(" + degree + ", " + colour1 + ", " + colour2 + "), url('" + image + "');";
+    string background = "background-image: linear-gradient(" + degree + ", " + colour1 + ", " + colour2 + ");";
 
 
 }
@@ -46,12 +45,11 @@
                 colour1 = primaryColours[random.Next(primaryColours.Count)];
                 colour2 = secondaryColours[random.Next(secondaryColours.Count)];
 
-                image = user.image;
-                background = "background-image: linear-gradient(" + degree + ", " + colour1 + ", " + colour2 + "), url('" + image + "');";
+                background = "background-image: linear-gradient(" + degree + ", " + colour1 + ", " + colour2 + ");";
 
-                string name = Model._userService.GetNameByID(user.id);
+                string name = Model._userService.GetNameByID(user.userID);
 
-                <a class="card-user" asp-area="" asp-page="/Project" asp-route-id="@user.id" style="@background">
+                <a class="card-user" asp-area="" asp-page="/Project" asp-route-id="@user.userID" style="@background">
                     <article class="">
                         <h2 class="title">@name</h2>
                     </article>
@@ -73,7 +71,7 @@
             @foreach (var part in Model.sections)
             {
                 sectionCount++;
-                Model.questions = Model._questionService.GetQuestionsBySection(part.id);
+                Model.questions = Model._questionService.GetQuestionsBySection(Int32.Parse(part.id));
 
                 <div class="section" id="@part.id">
                     <h2>@sectionCount . @part.title</h2>
@@ -109,7 +107,7 @@
             {
                 responseCount++;
 
-                Model.sectionAnswers = Model._sectionAnswerService.GetSectionAnswersByResponse(response.id);
+                Model.sectionAnswers = Model._sectionAnswerService.GetSectionAnswersByResponse(Int32.Parse(response.responseID));
                 sectionAnswerCount = 0;
                 answerCount = 0;
 
@@ -117,7 +115,7 @@
                     @foreach (var sectionAnswer in Model.sectionAnswers)
                     {
                         sectionAnswerCount++;
-                        Model.answers = Model._answerService.GetAnswersBySectionAnswer(sectionAnswer.id);
+                        Model.answers = Model._answerService.GetAnswersBySectionAnswer(Int32.Parse(sectionAnswer.id));
                         Model.section = @Model._sectionService.GetSectionById(sectionAnswer.sectionId);
 
                         <div class="section" id="@sectionAnswer.id">

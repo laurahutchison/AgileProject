@@ -1,0 +1,15 @@
+﻿@page
+@model Test.Pages.Admin.RegisterModel
+@{
+    Layout = "_AdminLayout.cshtml";
+}
+
+<section>
+    <div class="container">
+        <form method="post">
+            <input type="text" asp-for="log.username" placeholder="john doe" />
+            <input type="password" asp-for="log.passwordHash" placeholder="password" />
+            <button type="submit" asp-page-handler="Create">Submit</button>
+        </form>
+    </div>
+</section>

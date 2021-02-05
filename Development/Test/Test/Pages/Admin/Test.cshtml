@@ -1,0 +1,42 @@
+﻿@page
+@model Test.Pages.TestModel
+@{
+    ViewData["Title"] = "Testing Load Data";
+    Layout = "_AdminLayout.cshtml";
+}
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+    </head>
+
+    <body>
+        <h3>Test Table</h3>
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>Ques ID</th>
+                <th>1</th>
+                <th>2</th>
+            </tr>
+            @foreach (var questionanswerexample in Model.TestTables)
+            {
+                <tr>
+                    <td>@questionanswerexample.questionAnswerID</td>
+                    <td>@questionanswerexample.questionID</td>
+                    <td>@questionanswerexample.answer1</td>
+                    <td>@questionanswerexample.answer2</td>
+                </tr>
+            }
+        </table>
+
+        <h1>Add Address</h1>
+        <form method="post">
+            <input type="text" asp-for="test.questionAnswerID" placeholder="ID" />
+            <input type="text" asp-for="test.questionID" placeholder="questions set id" />
+            <input type="text" asp-for="test.answer1" placeholder="answer 1" />
+            <input type="text" asp-for="test.answer2" placeholder="answer 2 :)" />
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>

@@ -41,8 +41,8 @@ namespace Test.Services
 
         public Question GetQuestionById(int questionID)
         {
-            IEnumerable<Question> temp = GetQuestions().Where(x => x.id == questionID);
-            return temp.FirstOrDefault(x => x.id == questionID);
+            IEnumerable<Question> temp = GetQuestions().Where(x => Int32.Parse(x.id) == questionID);
+            return temp.FirstOrDefault(x => Int32.Parse(x.id) == questionID);
 
         }
     }

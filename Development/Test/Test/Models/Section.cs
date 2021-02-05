@@ -12,7 +12,8 @@ namespace Test.Models
     [Table("sections")]
     public class Section
     {
-        public int id { get; set; }
+        [Key]
+        public string id { get; set; }
         //public string name { get; set; }
         //public string questionnaireId { get; set; }
         //public string title { get; set; }
@@ -22,9 +23,12 @@ namespace Test.Models
 
         public int questionCount { get; set; }
 
+
+        [NotMapped]
         public SortedList questions { get; set; }
 
         //do method to delimit string??
+        [NotMapped]
         public List<string> questionIds { get; set; }
 
 

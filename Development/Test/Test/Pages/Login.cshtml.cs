@@ -6,6 +6,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Test.Models;
 using System.Security.Cryptography;
+using Microsoft.AspNetCore.Http;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.Extensions.Configuration;
+
 
 namespace Test
 {
@@ -17,9 +23,14 @@ namespace Test
         [BindProperty]
         public logininfo log { get; set; }
 
-        public LoginModel(DatabaseContext _db)
+        private readonly IConfiguration configuration;
+
+        private string loggedIn;
+
+        public LoginModel(DatabaseContext _db, IConfiguration configuration)
         {
             db = _db;
+            this.configuration = configuration;
         }
 
         public List<logininfo> Login { get; set; }
@@ -27,11 +38,12 @@ namespace Test
 
         public void OnGet()
         {
+            //loggedIn = GetSpecificClaim();
             Console.Write("hjkl");
 
         }
 
-        public IActionResult OnPostLogin()
+        public async Task<IActionResult> OnPostLogin()
         {
 
             Login = db.Login.ToList();
@@ -48,64 +60,36 @@ namespace Test
             bool ifExists = db.Login.Any(Login => Login.username == log.username);
             int index = Login.FindIndex(a => a.username == log.username);
 
-
-            //log = findAccount(index);
-
             Console.WriteLine("testing");
-
-            //if (log.Equals(null))
-            //{
-            //    return RedirectToPage("./Index");
-            //}
-
-            Console.Write("fuck disssssss");
 
             if (ifExists)
             {
-                if (findAccount(index).passwordHash == log.passwordHash)
+                string fuckthis = hashPassword(log.passwordHash);
+                if (findAccount(index).passwordHash == fuckthis)
                 {
+                    //set cookie
+                    var claims = new List<Claim>
+                    {
+                        new Claim(ClaimTypes.Name, log.username),
+                        //new Claim(ClaimTypes.Role, log.role),
+                    };
+                    var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                    var authProperties = new AuthenticationProperties
+                    {
+                        ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(10),
+                    };
+                    await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
+                    
+                    //debug
                     Console.WriteLine("dfghjkl;");
                     auth = true;
                     //return to logged in page
-                    return RedirectToPage("./IndexLogIn");
+                    return RedirectToPage("/admin/index");
                 }
             }
-
-            ViewData["auth"] = $"{auth}";
-
+           
             // here we return to not logged in page
-            return RedirectToPage("./Index");
-        }
-
-        public IActionResult OnPostCreate()
-        {
-
-
-            if (ModelState.IsValid == false)
-            {
-                return Page();
-            }
-
-            Login = db.Login.ToList();
-
-            bool ifExists = db.Login.Any(Login => Login.username == log.username);
-            int index = Login.FindIndex(a => a.username == log.username);
-
-            if (ifExists)
-            {
-                //code here account already exists
-                Console.WriteLine("Account exists");
-            }
-            else if (!ifExists)
-            {
-                //if (db.TestTables.Contains<questionanswerexample>(test.questionAnswerID))
-                //Add to database - add to the dbSet in Database Context, then save changes
-                log.passwordHash = hashPassword(log.passwordHash);
-                db.Login.Add(log);
-                db.SaveChanges();
-
-            }
-            return RedirectToPage("./Index");
+            return Page();
         }
 
         public logininfo findAccount(int index)

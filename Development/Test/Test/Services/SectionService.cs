@@ -41,8 +41,8 @@ namespace Test.Services
 
         public Section GetSectionById(int sectionID)
         {
-            IEnumerable<Section> temp = GetSections().Where(x => x.id == sectionID);
-            return temp.FirstOrDefault(x => x.id == sectionID);
+            IEnumerable<Section> temp = GetSections().Where(x => Int32.Parse(x.id) == sectionID);
+            return temp.FirstOrDefault(x => Int32.Parse(x.id) == sectionID);
 
         }
     }

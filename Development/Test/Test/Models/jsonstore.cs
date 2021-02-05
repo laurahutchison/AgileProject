@@ -13,10 +13,10 @@ namespace Test.Models
 
         [Key]
 
-        public int jsonID { get; set; }
+        public string jsonID { get; set; }
         public string jsonText {get;set;}
 
-        public jsonstore(int jsonID, string jsonText)
+        public jsonstore(string jsonID, string jsonText)
         {
             this.jsonID = jsonID;
             this.jsonText = jsonText;

@@ -4,6 +4,9 @@ using System.IO;
 using System.Text.Json;
 using Microsoft.AspNetCore.Hosting;
 using Test.Models;
+using Newtonsoft.Json.Linq;
+using System.Linq;
+
 
 namespace Test.Services
 {
@@ -29,13 +32,36 @@ namespace Test.Services
 
         public IEnumerable<Project> GetProjects()
         {
+
+            // private string sPath;
+            ////sPath = Environment.CurrentDirectory.ToString();
+
+            //JObject o1 = JObject.Parse(System.IO.File.ReadAllText("projects.json"));
+            // string test2 = new jsonstore(0, o1.ToString(Newtonsoft.Json.Formatting.None));
+            //Project project = o1.ToObject<Project>();
+
+
+
+        //    using (var jsonFileReader = File.OpenText(JsonFileName("projects.json")))
+        //{
+        // return JsonSerializer.Deserialize<Project[]>(jsonFileReader.ReadToEnd(),
+        //       new JsonSerializerOptions
+        //      {
+        //     PropertyNameCaseInsensitive = true
+        //         });
+        // }
+
             using (var jsonFileReader = File.OpenText(JsonFileName("projects.json")))
             {
-                return JsonSerializer.Deserialize<Project[]>(jsonFileReader.ReadToEnd(),
-                    new JsonSerializerOptions
-                    {
-                        PropertyNameCaseInsensitive = true
-                    });
+                var serializeOptions = new JsonSerializerOptions();
+
+                serializeOptions.PropertyNameCaseInsensitive = true;
+
+                serializeOptions.Converters.Add(new Int32Converter());
+
+                return JsonSerializer.Deserialize<Project[]>
+                                     (jsonFileReader.ReadToEnd(),
+                   serializeOptions);
             }
         }
 

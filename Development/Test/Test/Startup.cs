@@ -13,6 +13,9 @@ using Microsoft.EntityFrameworkCore;
 using Test.Models;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Test
 {
@@ -28,7 +31,7 @@ namespace Test
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            //json file services
             services.AddTransient<ProjectService>();
             services.AddTransient<UserService>();
             services.AddTransient<ImageService>();
@@ -39,16 +42,31 @@ namespace Test
             services.AddTransient<AnswerService>();
             services.AddTransient<QuestionnaireService>();
 
-
+            //standard
             services.AddRazorPages();
             services.AddLogging();
             services.AddMvc();
 
+            //cookie login session
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                // This lambda determines whether user consent for non-essential cookies is needed for a given request.
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options => {
+                options.LoginPath = "/";
+                options.Cookie.Name = "myCookie";
+            });
+
+            services.AddMvc().AddRazorPagesOptions(options => {
+                options.Conventions.AuthorizeFolder("/admin");
+            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            //Database connection
             services.AddDbContext<DatabaseContext>(options => options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));            //services.AddRazorPages();
         }
 
-        //var connection = Configuration.GetConnectionString("DefaultConnection");
-        //services.AddDbContext<DatabaseContext>(options => options.UseMySql(connection));
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -66,7 +84,9 @@ namespace Test
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            //app.UseEndpoints();
+           
+            app.UseAuthentication();
+            //app.UseMvc();
 
             app.UseRouting();
 

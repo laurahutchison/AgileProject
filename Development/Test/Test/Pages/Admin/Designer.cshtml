@@ -1,0 +1,57 @@
+﻿@page
+@model Webtest.Pages.DesignerModel
+@{
+    ViewData["Title"] = "Question Designer (prototype page)";
+    Layout = "~/Shared/_AdminLayout.cshtml";
+
+}
+<div class="text-center">
+
+    <h2 class="display-15">Question designer (prototype page)</h2>
+    <p></p>
+
+    <!--DETAILS-->
+    <!--allows users to input the name of the questionairre-->
+    <p>Title</p>
+    <input id="title" name="Title" type="text" value="New Questionairre" />
+    <p></p>
+
+    <!--allows users to input the name of the author as well as add additional authors-->
+    <p>Author(s)</p>
+        <input id="author" name="Author" type="text" value="" />
+        <button type="button" onclick="AddAuthor()">Add</button>
+        <button type="button" onclick="alert('this will remove an extra author slot')">Remove</button>
+
+    <p></p>
+
+
+
+    <!--SECTIONS-->
+    <!--allows the user to input the section name-->
+    <p>Question Sections</p>
+    <p style="border:1px; border-style:solid; border-color:#000000; padding: 1em;">
+        <label for="sectiontitle">Title:</label>
+        <input id="sectiontitle" name="SectionTitle" type="text" value="New Section" />
+        <br />
+
+        <!--allows the user to add a question type from a drop down menu-->
+        <label for="questionlist">Question type:</label>
+        <select name="QuestionList" id="questionlist">
+            <option value="Blank"></option>
+            <option value="Multiple">Multiple Choice</option>
+            <option value="Open">Open Ended</option>
+        </select>
+        <button type="button" onclick="alert('this will add an extra author slot')">Add</button>
+        <button type="button" onclick="alert('this will remove an extra author slot')">Remove</button>
+    </p>
+
+    <!--allows the user to add additional sections-->
+    <button type="button" onclick="alert('this will add an extra author slot')">Add</button>
+    <button type="button" onclick="alert('this will remove an extra author slot')">Remove</button>
+    <p></p>
+
+
+    <button type="button" onclick="alert('this will save all inputted data to where ever we are saving it')">Save</button>
+</div>
+
+ 

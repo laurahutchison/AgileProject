@@ -3,6 +3,7 @@
 @{
     string name = Model._userService.GetNameByID(Model.project.authorId);
     string names = Model._userService.GetNamesFromList(Model.project.coAuthorIds);
+    Layout = "_AdminLayout.cshtml";
 }
 <section>
     <div class="container" style="padding: 0 73px">
@@ -19,8 +20,8 @@
                 string colour1 = primaryColours[random.Next(primaryColours.Count)];
                 string colour2 = secondaryColours[random.Next(secondaryColours.Count)];
 
-                string image = questionnaires.image;
-                string background = "background-image: linear-gradient(" + degree + ", " + colour1 + ", " + colour2 + "), url('" + image + "');";
+
+                string background = "background-image: linear-gradient(" + degree + ", " + colour1 + ", " + colour2 + ");";
 
                 string name2 = Model._userService.GetNameByID(questionnaires.authors);
                 string names2 = Model._userService.GetNamesFromList(questionnaires.coAuthorIds);

@@ -15,5 +15,6 @@ namespace Test.Models
         public int accountID { get; set; }
         public string username { get; set; }
         public string passwordHash { get; set; }
+        public string role { get; set; }
     }
 }

@@ -41,7 +41,7 @@ namespace Test.Services
 
         public User GetUserByID(string id)
         {
-            return GetUsers().First(x => x.id == id);
+            return GetUsers().First(x => x.userID == id);
         }
 
         public string GetNameByID(string id)
@@ -51,7 +51,7 @@ namespace Test.Services
             return name;
         }
 
-        public string GetNamesFromList(List<string> ids)
+        public string GetNamesFromList(List<int> ids)
         {
             string names = "";
 
@@ -59,11 +59,11 @@ namespace Test.Services
             {
                 if (id != ids.Last())
                 {
-                    names += (GetNameByID(id) + ", ");
+                    names += (GetNameByID(id.ToString()) + ", ");
                 }
                 else if (id == ids.Last())
                 {
-                    names += GetNameByID(id);
+                    names += GetNameByID(id.ToString());
                 }
             }
 

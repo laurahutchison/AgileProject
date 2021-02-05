@@ -36,12 +36,12 @@ namespace Test.Services
 
         public Response GetResponseById(int id)
         {
-            return GetResponses().First(x => x.id == id);
+            return GetResponses().First(x => Int32.Parse(x.responseID) == id);
         }
 
         public IEnumerable<Response> GetResponsesByQuestionnaire(int questionnaire)
         {
-            return GetResponses().Where(x => x.questionnaireId == questionnaire);
+            return GetResponses().Where(x => x.questionnaireID == questionnaire);
         }
     }
 }

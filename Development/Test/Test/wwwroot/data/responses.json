@@ -1,0 +1,13 @@
+﻿[
+  {
+    "id": "1",
+    "questionnaireId": "1",
+    "sectionAnswerIds": [ "1" ]
+  },
+
+  {
+    "id": "2",
+    "questionnaireId": "1",
+    "sectionAnswerIds": [ "2" ]
+  }
+]

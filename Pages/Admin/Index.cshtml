@@ -1,0 +1,16 @@
+﻿@page
+@model Test.Pages.Admin.IndexModel
+@using Test.Pages
+@{
+    Layout = "C:\Users\Laura\Uni\Agile\AgileProject\AgileProject\Development\Test\Test\Pages\Admin\Shared\_Layout.cshtml";
+}
+
+
+
+<h1>Register User</h1>
+<br />
+<form method="post">
+    <input type="text" asp-for="log.username" placeholder="john doe" />
+    <input type="password" asp-for="log.passwordHash" placeholder="password" />
+    <button type="submit" asp-page-handler="Create">Submit</button>
+</form>

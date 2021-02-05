@@ -1,46 +1,71 @@
 ﻿<Properties StartupConfiguration="{6F13D53A-272D-4B92-A98D-F3FB09C86493}|Default">
-  <MonoDevelop.Ide.ItemProperties.Test PreferredExecutionTarget="/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Test/Models/Question.cs">
+  <MonoDevelop.Ide.ItemProperties.Test PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Test/Services/ProjectService.cs">
     <Files>
-      <File FileName="Test/Pages/Questionnaire2.cshtml" Line="29" Column="33" />
-      <File FileName="Test/Pages/Questionnaire2.cshtml.cs" Line="57" Column="1" />
-      <File FileName="Test/Pages/Questionnaire.cshtml.cs" Line="54" Column="62" />
-      <File FileName="Test/wwwroot/data/questions.json" Line="15" Column="22" />
-      <File FileName="Test/Pages/Questionnaire.cshtml" Line="61" Column="27" />
-      <File FileName="Test/Pages/Shared/_Layout.cshtml" Line="30" Column="106" />
-      <File FileName="Test/Services/QuestionnaireService.cs" Line="59" Column="1" />
-      <File FileName="Test/Pages/Index.cshtml" Line="1" Column="1" />
-      <File FileName="Test/Pages/FormBuilder.cshtml" Line="29" Column="92" />
-      <File FileName="Test/wwwroot/css/site.css" Line="76" Column="18" />
-      <File FileName="Test/Pages/Projects.cshtml" Line="31" Column="44" />
-      <File FileName="Test/Pages/Project.cshtml" Line="25" Column="62" />
-      <File FileName="Test/Services/UserService.cs" Line="42" Column="32" />
-      <File FileName="Test/Models/User.cs" Line="12" Column="40" />
-      <File FileName="Test/wwwroot/data/users.json" Line="46" Column="27" />
-      <File FileName="Test/Pages/InfoSheet.cshtml" Line="8" Column="48" />
-      <File FileName="Test/Pages/InfoSheet.cshtml.cs" Line="27" Column="76" />
-      <File FileName="Test/Models/Question.cs" Line="12" Column="21" />
+      <File FileName="Test/Pages/Questionnaire2.cshtml" Line="51" Column="34" />
+      <File FileName="Test/Pages/Questionnaire2.cshtml.cs" />
+      <File FileName="Test/Pages/Questionnaire.cshtml.cs" />
+      <File FileName="Test/wwwroot/data/questions.json" />
+      <File FileName="Test/Pages/Questionnaire.cshtml" />
+      <File FileName="Test/Pages/Shared/_Layout.cshtml" />
+      <File FileName="Test/Services/QuestionnaireService.cs" Line="39" Column="39" />
+      <File FileName="Test/Pages/Index.cshtml" />
+      <File FileName="Test/Pages/FormBuilder.cshtml" Line="143" Column="1" />
+      <File FileName="Test/wwwroot/css/site.css" />
+      <File FileName="Test/Pages/Projects.cshtml" Line="41" Column="26" />
+      <File FileName="Test/Pages/Project.cshtml" />
+      <File FileName="Test/Services/UserService.cs" />
+      <File FileName="Test/Models/User.cs" />
+      <File FileName="Test/wwwroot/data/users.json" />
+      <File FileName="Test/Pages/InfoSheet.cshtml" />
+      <File FileName="Test/Pages/InfoSheet.cshtml.cs" />
+      <File FileName="Test/Models/Question.cs" />
+      <File FileName="Test/Models/Answer.cs" />
+      <File FileName="Test/Services/AnswerService.cs" />
+      <File FileName="Test/Services/ImageService.cs" />
+      <File FileName="Test/Startup.cs" Line="1" Column="1" />
+      <File FileName="Test/wwwroot/data/sections.json" />
+      <File FileName="Test/wwwroot/data/questionnaires.json" />
+      <File FileName="Test/Services/ProjectService.cs" Line="67" Column="69" />
+      <File FileName="Test/Services/SectionAnswerService.cs" Line="1" Column="1" />
+      <File FileName="Test/wwwroot/data/projects.json" Line="105" Column="4" />
+      <File FileName="Test/wwwroot/js/site.js" Line="44" Column="2" />
+      <File FileName="Test/wwwroot/js/EmptyJSFile.js" Line="1" Column="1" />
+      <File FileName="Test/wwwroot/js/formBuilder.js" Line="30" Column="18" />
+      <File FileName="Test/Pages/Projects.cshtml.cs" Line="35" Column="27" />
+      <File FileName="Test/Program.cs" Line="1" Column="1" />
+      <File FileName="Test/appsettings.json" Line="1" Column="1" />
+      <File FileName="Test/Pages/Index.cshtml.cs" Line="28" Column="13" />
+      <File FileName="Test/Pages/FormBuilder.cshtml.cs" Line="43" Column="13" />
+      <File FileName="Test/Pages/Privacy.cshtml.cs" Line="1" Column="1" />
+      <File FileName="Test/Models/Project.cs" Line="11" Column="48" />
+      <File FileName="Test/Pages/Project.cshtml.cs" Line="38" Column="91" />
+      <File FileName="Test/Services/QuestionService.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Test" expanded="True">
             <Node name="Test" expanded="True">
-              <Node name="Models" expanded="True">
-                <Node name="Question.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True" />
               <Node name="Pages" expanded="True">
-                <Node name="InfoSheet.cshtml" expanded="True" />
-                <Node name="Questionnaire2.cshtml" expanded="True" />
+                <Node name="Project.cshtml" expanded="True" />
               </Node>
-              <Node name="Services" expanded="True" />
+              <Node name="Services" expanded="True">
+                <Node name="ProjectService.cs" selected="True" />
+              </Node>
               <Node name="wwwroot" expanded="True">
                 <Node name="css" expanded="True" />
                 <Node name="data" expanded="True" />
+                <Node name="js" expanded="True" />
               </Node>
             </Node>
           </Node>
         </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>

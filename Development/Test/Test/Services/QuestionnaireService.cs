@@ -22,12 +22,6 @@ namespace Test.Services
             get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "questionnaires.json"); }
         }
 
-        //public void addQuestionnaire(Questionnaire questionnaire)
-        //{
-        //    string json = questionnaire.ToString();
-        //    File.WriteAllText(JsonFileName, json);
-        //}
-
         public IEnumerable<Questionnaire> GetQuestionnaires()
         {
             using (var jsonFileReader = File.OpenText(JsonFileName))
@@ -50,9 +44,43 @@ namespace Test.Services
             return GetQuestionnaires().Where(x => x.projectId == project);
         }
 
-        //internal void addQuestionnaire(Test.Pages.Questionnaire questionnaire)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public string NewQuestionnaire(string project)
+        {
+            var questionnaires = GetQuestionnaires();
+
+            var query = questionnaires.Count();
+            string id = (query + 1).ToString();
+
+            Questionnaire questionnaire = new Questionnaire();
+
+            questionnaire.id = id;
+            questionnaire.authorId = "1";
+            questionnaire.title = ("Questionnaire " + id);
+            questionnaire.description = "";
+            questionnaire.projectId = project;
+            questionnaire.coAuthorIds = new List<string>();
+            questionnaire.sectionIds = new List<string>();
+            questionnaire.image = "";
+            questionnaire.sectionCount = 0;
+
+            var questionnaires2 = questionnaires.ToList();
+            questionnaires2.Add(questionnaire);
+            PostQuestionnaires(questionnaires2);
+            return questionnaire.id;
+        }
+
+        public void PostQuestionnaires(IEnumerable<Questionnaire> questionnaires)
+        {
+            using (var outputStream = File.OpenWrite(JsonFileName))
+            {
+                JsonSerializer.Serialize<IEnumerable<Questionnaire>>(
+                    new Utf8JsonWriter(outputStream, new JsonWriterOptions
+                    {
+                        SkipValidation = true,
+                        Indented = true
+                    }),
+                    questionnaires);
+            }
+        }
     }
 }

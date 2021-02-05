@@ -27,5 +27,12 @@ namespace Test.Pages
         {
             projects = _projectService.GetProjects();
         }
+
+        public IActionResult OnPost()
+        {
+            _projectService.NewProject();
+            projects = _projectService.GetProjects();
+            return Page();
+        }
     }
 }

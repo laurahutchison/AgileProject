@@ -57,9 +57,11 @@
                     </article>
                 </a>
             }
-            <button class="card" onclick="">
-                <h1>+</h1>
-            </button>
+            <form class="card" id="addBtn1" method="post">
+                <button id="newProject" class="card" onclick="">
+                    <h1>+</h1>
+                </button>
+            </form>
         </div>
     </div>
 </section>
@@ -69,7 +71,7 @@
 
         @if (Model.subpage == "questions")
         {
-            <a asp-area="" asp-page="" asp-fragment="qContent" asp-route-id="@Model.id" asp-route-subpage="responses" class="nav-item" style="display:inline-block;flex: 0 0 57px;margin:21px 21px 21px 0;">Responses</a>
+            <a asp-area="" asp-page="" asp-fragment="qContent" asp-route-id="@Model.id" asp-route-subpage="responses" class="nav-item" style="display:inline-block;flex: 0 0 57px;margin:5px 21px 21px 0;">Responses</a>
             @foreach (var part in Model.sections)
             {
                 sectionCount++;
@@ -97,7 +99,7 @@
         }
         else if (Model.subpage == "responses")
         {
-            <a asp-area="" asp-page="" asp-fragment="qContent" asp-route-id="@Model.id" asp-route-subpage="questions" class="nav-item" style="display:inline-block;flex: 0 0 57px;margin:21px 21px 21px 0;">Questions</a>
+            <a asp-area="" asp-page="" asp-fragment="qContent" asp-route-id="@Model.id" asp-route-subpage="questions" class="nav-item" style="display:inline-block;flex: 0 0 57px;margin:5px 21px 21px 0;">Questions</a>
 
             <div>
                 <span><button onClick="changeResponse(-1)">&#10094;</button></span>
@@ -141,7 +143,7 @@
                     }
                 </div>
             }
-            <button class="btn">Export Responses</button>
+            @*<button class="btn">Export Responses</button>*@
 
             @*<div class="flex">
 

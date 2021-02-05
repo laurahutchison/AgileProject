@@ -54,7 +54,9 @@ namespace Test.Pages
 
         public void OnPost()
         {
-
+            questionnaire = _questionnaireService.GetQuestionnaireById(id);
+            sections = _sectionService.GetSectionsByQuestionnaire(id);
+            users = _userService.GetUsersByQuestionnaire(id);
         }
     }
 }

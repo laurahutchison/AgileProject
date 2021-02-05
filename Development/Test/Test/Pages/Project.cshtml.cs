@@ -32,5 +32,13 @@ namespace Test.Pages
             project = _projectService.GetProjects().First(x => x.id == id);
             questionnaires = _questionnaireService.GetQuestionnairesByProject(id);
         }
+
+        public void OnPost()
+        {
+            project = _projectService.GetProjects().First(x => x.id == id);
+            project.questionnaireIds.Add(_questionnaireService.NewQuestionnaire(project.id));
+            _projectService.UpdateProject(project);
+            questionnaires = _questionnaireService.GetQuestionnairesByProject(id);
+        }
     }
 }

@@ -129,7 +129,7 @@ a.card, a.card:visited {
         transform: translateY(5px);
     }
 
-button.card, button.card:focus:not(.focus-visible), a.card-user, a.card-user:visited {
+form.card, form.card:focus:not(.focus-visible), a.card-user, a.card-user:visited {
     opacity: 0.7;
     border: none;
     display: grid;
@@ -144,7 +144,7 @@ button.card, button.card:focus:not(.focus-visible), a.card-user, a.card-user:vis
     box-shadow: none;
 }
 
-    button.card:hover, button.card:focus, a.card-user:hover, a.card-user:focus {
+   form.card:hover, form.card:focus, a.card-user:hover, a.card-user:focus {
         display: grid;
         opacity: 1;
         border: none;
@@ -156,11 +156,29 @@ button.card, button.card:focus:not(.focus-visible), a.card-user, a.card-user:vis
         color: #fffaf4;
         transition: 0.21s;
         box-shadow: 0 4px 8px 0 #46464633, 0 6px 20px 0 #46464630;
-/*        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+        /*        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
     }
 
-button.card:active, a.card-user:active {
+form.card:active, a.card-user:active {
     transform: translateY(5px);
+}
+
+.section {
+    margin-bottom:5px;
+}
+
+.questions {
+    margin-bottom: 13px;
+}
+
+button.card {
+    width: 100%;
+    height: 100%;
+    border: inherit;
+    outline: inherit;
+    opacity: inherit;
+    color: inherit;
+    background-color:inherit;
 }
 
 .card-user article {

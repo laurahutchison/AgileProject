@@ -54,5 +54,13 @@ namespace Test.Pages
             users = _userService.GetUsersByQuestionnaire(id);
             responses = _responseService.GetResponsesByQuestionnaire(id);
         }
+
+        public void OnPost()
+        {
+            questionnaire = _questionnaireService.GetQuestionnaireById(id);
+            sections = _sectionService.GetSectionsByQuestionnaire(id);
+            users = _userService.GetUsersByQuestionnaire(id);
+            responses = _responseService.GetResponsesByQuestionnaire(id);
+        }
     }
 }

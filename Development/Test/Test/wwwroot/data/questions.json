@@ -5,6 +5,7 @@
     "questionType": "text",
     "required": true,
     "question": "Is Agile Good?",
+    "description": "Short answer",
     "answerOptions": [],
     "answerIds": [ "1" ]
   },
@@ -14,6 +15,7 @@
     "questionType": "radio",
     "required": false,
     "question": "Did you answer truthly?",
+    "description": "",
     "answerOptions": [ "Yes", "No" ],
     "answerIds": [ "2" ]
   }

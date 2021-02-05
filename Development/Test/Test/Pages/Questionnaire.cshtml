@@ -69,7 +69,7 @@
 
         @if (Model.subpage == "questions")
         {
-            <a asp-area="" asp-page="" asp-fragment="qContent" asp-route-id="@Model.id" asp-route-subpage="responses" class="btn" style="display:inline-block;flex: 0 0 57px;margin:21px 21px 21px 0;">Responses</a>
+            <a asp-area="" asp-page="" asp-fragment="qContent" asp-route-id="@Model.id" asp-route-subpage="responses" class="nav-item" style="display:inline-block;flex: 0 0 57px;margin:21px 21px 21px 0;">Responses</a>
             @foreach (var part in Model.sections)
             {
                 sectionCount++;
@@ -97,7 +97,7 @@
         }
         else if (Model.subpage == "responses")
         {
-            <a asp-area="" asp-page="" asp-fragment="qContent" asp-route-id="@Model.id" asp-route-subpage="questions" class="btn" style="display:inline-block;flex: 0 0 57px;margin:21px 21px 21px 0;">Questions</a>
+            <a asp-area="" asp-page="" asp-fragment="qContent" asp-route-id="@Model.id" asp-route-subpage="questions" class="nav-item" style="display:inline-block;flex: 0 0 57px;margin:21px 21px 21px 0;">Questions</a>
 
             <div>
                 <span><button onClick="changeResponse(-1)">&#10094;</button></span>

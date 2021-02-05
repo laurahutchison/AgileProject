@@ -35,44 +35,66 @@
                 sectionCount++;
                 Model.questions = Model._questionService.GetQuestionsBySection(part.id);
 
-                <div class="section">
-                    <h2>@sectionCount . @part.title</h2>
-                    <p>@part.description</p>
+                <div class="section" style="margin-bottom:5px;">
+                    <h2 style="margin-bottom: 0;">@sectionCount . @part.title</h2>
+                    <p style="margin-top:5px;margin-bottom:7px;">@part.description</p>
                     @foreach (var question in Model.questions)
                     {
                         questionCount++;
-                <div class="question">
-                    @if (question.required)
-                    {
-                        <label><strong>@questionCount) @question.question <span class="required">*</span></strong></label><br />
-                        @if (question.answerOptions.Count != 0)
-                        {
-                            @foreach (var option in question.answerOptions)
+                        <div class="question" style="margin-bottom:13px;">
+                            @if (question.required)
                             {
-                                <input type="@question.questionType" value="@option" id="@question.id" name="@question.id" required /><label for="@question.id">@option</label><br />
+                                <label><strong>@questionCount) @question.question <span class="required">*</span></strong></label><br />
+                                @if(question.description != "")
+                                {
+                                    <label style="font-weight: 100;margin-top: 5px;">@question.description</label><br />
+                                }
+                                @if (question.answerOptions.Count != 0)
+                                {
+                                    @if(question.questionType == "radio"){
+                                        <label style="font-weight: 100;margin-top: 5px;"><em>Choose One</em></label><br />
+                                    }
+                                    else
+                                    {
+                                        <label style="font-weight: 100;margin-top: 5px;"><em>Choose all that apply</em></label><br />
+                                    }
+                                    @foreach (var option in question.answerOptions)
+                                    {
+                                        <input type="@question.questionType" value="@option" id="@question.id" name="@question.id" required /><label for="@question.id">@option</label><br />
+                                    }
+                                }
+                                else
+                                {
+                                    <input type="@question.questionType" value="" id="@question.id" name="@question.id" required /><br />
+                                }
                             }
-                        }
-                        else
-                        {
-                            <input type="@question.questionType" value="" id="@question.id" name="@question.id" required /><br />
-                        }
-                    }
-                    else
-                    {
-                        <label><strong>@questionCount) @question.question</strong></label><br />
-                        @if (question.answerOptions.Count != 0)
-                        {
-                            @foreach (var option in question.answerOptions)
+                            else
                             {
-                                <input type="@question.questionType" value="@option" id="@question.id" name="@question.id" /><label for="@question.id">@option</label><br />
+                                <label><strong>@questionCount) @question.question</strong></label><br />
+                                @if(question.description != "")
+                                {
+                                    <label style="font-weight: 100;margin-top: 5px;">@question.description</label><br />
+                                }
+                                @if (question.answerOptions.Count != 0)
+                                {
+                                    @if(question.questionType == "radio"){
+                                        <label style="font-weight: 100;margin-top: 5px;"><em>Choose One</em></label><br />
+                                    }
+                                    else
+                                    {
+                                        <label style="font-weight: 100;margin-top: 5px;"><em>Choose all that apply</em></label><br />
+                                    }
+                                    @foreach (var option in question.answerOptions)
+                                    {
+                                        <input type="@question.questionType" value="@option" id="@question.id" name="@question.id" /><label for="@question.id">@option</label><br />
+                                    }
+                                }
+                                else
+                                {
+                                    <input type="@question.questionType" value="" id="@question.id" name="@question.id" /><br />
+                                }
                             }
-                        }
-                        else
-                        {
-                            <input type="@question.questionType" value="" id="@question.id" name="@question.id" /><br />
-                        }
-                    }
-                </div>
+                        </div>
                     }
                 </div>
                 <input type="submit" class="btn" value="Send" style="margin-left: 0;" />

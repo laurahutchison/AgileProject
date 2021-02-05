@@ -11,6 +11,7 @@ namespace Test.Models
         public string questionType { get; set; }
         public bool required { get; set; }
         public string question { get; set; }
+        public string description { get; set; }
         public List<string> answerOptions { get; set; }
         public List<string> answerIds{ get; set; }
 
